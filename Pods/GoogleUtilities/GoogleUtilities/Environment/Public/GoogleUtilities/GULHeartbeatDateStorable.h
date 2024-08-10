@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,26 @@
  * limitations under the License.
  */
 
-#import "FirebaseCore/Sources/Public/FirebaseCore/FIRTimestamp.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-/** Internal FIRTimestamp API we don't want exposed in our public header files. */
-@interface FIRTimestamp (Internal)
+/**
+ * Describes an object that can store and fetch heartbeat dates for given tags.
+ */
+@protocol GULHeartbeatDateStorable <NSObject>
 
 /**
- * Converts the given date to an ISO 8601 timestamp string, useful for rendering in JSON.
- *
- * ISO 8601 dates times in UTC look like this: "1912-04-14T23:40:00.000000000Z".
- *
- * @see http://www.ecma-international.org/ecma-262/6.0/#sec-date-time-string-format
+ * Reads the date from the specified file for the given tag.
+ * @return Returns date if exists, otherwise `nil`.
  */
-- (NSString *)ISO8601String;
+- (nullable NSDate *)heartbeatDateForTag:(NSString *)tag;
+
+/**
+ * Saves the date for the specified tag in the specified file.
+ * @return YES on success, NO otherwise.
+ */
+- (BOOL)setHearbeatDate:(NSDate *)date forTag:(NSString *)tag;
 
 @end
 

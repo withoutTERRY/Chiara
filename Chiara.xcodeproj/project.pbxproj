@@ -10,6 +10,7 @@
 		2A1D9DC216A3B0FEFFF0BB13 /* Pods_Chiara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; };
 		67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A1E2C6767CA001F1577 /* AppDelegate.swift */; };
 		67680A212C676815001F1577 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67680A202C676815001F1577 /* GoogleService-Info.plist */; };
+		67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A222C6768A9001F1577 /* StreetDrainManager.swift */; };
 		67C309F82C6754760084070F /* ChiaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C309F72C6754760084070F /* ChiaraApp.swift */; };
 		67C309FA2C6754760084070F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C309F92C6754760084070F /* ContentView.swift */; };
 		67C309FC2C6754780084070F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67C309FB2C6754780084070F /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67680A1E2C6767CA001F1577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67680A202C676815001F1577 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		67680A222C6768A9001F1577 /* StreetDrainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrainManager.swift; sourceTree = "<group>"; };
 		67C309F42C6754760084070F /* Chiara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chiara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67C309F72C6754760084070F /* ChiaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChiaraApp.swift; sourceTree = "<group>"; };
 		67C309F92C6754760084070F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				FB4A04C32C676140008324F8 /* LocationManager.swift */,
+				67680A222C6768A9001F1577 /* StreetDrainManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -193,7 +196,6 @@
 			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 				ko,
 			);
@@ -267,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */,
 				FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */,
 				67C309FA2C6754760084070F /* ContentView.swift in Sources */,
 				FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StreetDrain: Identifiable, Codable {
+struct StreetDrain: Identifiable, Codable, Hashable {
     let id: String
     
     // 도로명 주소 받아오기
@@ -24,7 +24,7 @@ struct StreetDrain: Identifiable, Codable {
     var isCleaned: Bool
 }
 
-enum TrashType: Codable {
+enum TrashType: String, Codable {
     case cigarette
     case leaf
 }
