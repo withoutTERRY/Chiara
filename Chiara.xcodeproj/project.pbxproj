@@ -116,6 +116,7 @@
 		67C30A062C67549B0084070F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FB4A04CE2C679998008324F8 /* Maps */,
 				67C309F92C6754760084070F /* ContentView.swift */,
 				72B095102C67C35A00192F1A /* CameraView */,
 				FB4A04C52C6764A7008324F8 /* MapView.swift */,
@@ -193,6 +194,17 @@
 				FB4A04C02C675C73008324F8 /* StreetDrain.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FB4A04CE2C679998008324F8 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				FB4A04C52C6764A7008324F8 /* MapView.swift */,
+				FB4A04C72C6770DE008324F8 /* MapViewRepresentable.swift */,
+				FB4A04C92C6773C1008324F8 /* CustomAnnotation.swift */,
+				FB4A04CB2C677E0B008324F8 /* StreetDrainSheetView.swift */,
+			);
+			path = Maps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
