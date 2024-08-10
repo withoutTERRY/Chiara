@@ -10,6 +10,8 @@ import SwiftUI
 struct CleanSuccessView: View {
     var body: some View {
         VStack(spacing: 0) {
+            Spacer()
+            
             Text("Succesfully Cleaned")
                 .font(.system(size: 24, weight: .semibold))
                 .padding(.horizontal, 80)
@@ -71,7 +73,9 @@ struct CleanSuccessView: View {
                             .foregroundStyle(.white)
                     }
             }
+            .padding(.bottom, 44)
         }
+        .ignoresSafeArea()
     }
 }
 

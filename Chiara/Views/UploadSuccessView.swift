@@ -10,6 +10,8 @@ import SwiftUI
 struct UploadSuccessView: View {
     var body: some View {
         VStack(spacing: 0) {
+            Spacer()
+            
             Text("Upload Succesful")
                 .font(.system(size: 24, weight: .semibold))
                 .padding(.bottom, 40)
@@ -39,7 +41,9 @@ struct UploadSuccessView: View {
                             .foregroundStyle(.white)
                     }
             }
+            .padding(.bottom, 44)
         }
+        .ignoresSafeArea()
     }
 }
 
