@@ -11,7 +11,7 @@ import MapKit
 struct MapView: View {
     @EnvironmentObject var locationManager: LocationManager
     
-    @Binding var streetDrainList: [StreetDrain]
+//    @Binding var streetDrainList: [StreetDrain]
     
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 33.4996213, longitude: 126.5311884),
@@ -30,7 +30,7 @@ struct MapView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                MapViewRepresentable(streetDrainList: $streetDrainList,
+                MapViewRepresentable(
                                      region: Binding(
                                         get: {
                                             MKCoordinateRegion(
@@ -73,7 +73,7 @@ struct MapView: View {
                             .onAppear {
                                 // Sheet가 나타날 때 초기 위치로 설정
                                 withAnimation {
-                                    currentSheetHeight = 0.6
+                                    currentSheetHeight = 0.4
                                 }
                             }
                     } else {
@@ -143,6 +143,6 @@ struct MapView: View {
     }
 }
 
-#Preview {
-    MapView(streetDrainList: .constant([]))
-}
+//#Preview {
+//    MapView(streetDrainList: .constant([]))
+//}

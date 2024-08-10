@@ -21,7 +21,7 @@ class StreetDrainManager: ObservableObject {
     
     private init() {}
     
-    @Published var drains: [StreetDrain] = []
+    @Published var streetDrainList: [StreetDrain] = []
 }
 
 // MARK: - 배수구 관리 함수
@@ -44,7 +44,7 @@ extension StreetDrainManager {
                 do {
                     let data = try JSONSerialization.data(withJSONObject: json)
                     let drain = try self.decoder.decode(StreetDrain.self, from: data)
-                    self.drains.append(drain)
+                    self.streetDrainList.append(drain)
                 } catch {
                     print("an error occurred", error)
                 }
@@ -63,8 +63,8 @@ extension StreetDrainManager {
                     let data = try JSONSerialization.data(withJSONObject: json)
                     let updatedDrain = try self.decoder.decode(StreetDrain.self, from: data)
 
-                    if let index = self.drains.firstIndex(where: { $0.id == updatedDrain.id }) {
-                        self.drains[index] = updatedDrain
+                    if let index = self.streetDrainList.firstIndex(where: { $0.id == updatedDrain.id }) {
+                        self.streetDrainList[index] = updatedDrain
                     }
                 } catch {
                     print("an error occurred", error)
@@ -84,8 +84,8 @@ extension StreetDrainManager {
                     let data = try JSONSerialization.data(withJSONObject: json)
                     let removedDrain = try self.decoder.decode(StreetDrain.self, from: data)
 
-                    if let index = self.drains.firstIndex(where: { $0.id == removedDrain.id }) {
-                        self.drains.remove(at: index)
+                    if let index = self.streetDrainList.firstIndex(where: { $0.id == removedDrain.id }) {
+                        self.streetDrainList.remove(at: index)
                     }
                 } catch {
                     print("an error occurred", error)

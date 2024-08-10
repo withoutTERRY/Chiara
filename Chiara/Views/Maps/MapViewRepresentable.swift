@@ -11,8 +11,9 @@ import CoreLocation
 
 struct MapViewRepresentable: UIViewRepresentable {
     @EnvironmentObject var locationManager: LocationManager
+    @EnvironmentObject var streetDrainManager: StreetDrainManager
     
-    @Binding var streetDrainList: [StreetDrain]
+//    @Binding var streetDrainList: [StreetDrain]
     @Binding var region: MKCoordinateRegion
     @Binding var selectedStreetDrain: StreetDrain?
     @Binding var isSheetDisplaying: Bool
@@ -32,13 +33,13 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
         if uiView.annotations.isEmpty {
-            let annotations = streetDrainList.compactMap { streetDrain -> CustomAnnotation in
+            let annotations = streetDrainManager.streetDrainList.compactMap { streetDrain -> CustomAnnotation in
                 CustomAnnotation(title: streetDrain.address, coordinate: CLLocationCoordinate2D(latitude: streetDrain.latitude, longitude: streetDrain.longitude))
             }
             uiView.addAnnotations(annotations)
         } else {
             uiView.removeAnnotations(uiView.annotations)
-            let resultAnnotation = streetDrainList.compactMap { streetDrain -> CustomAnnotation in
+            let resultAnnotation = streetDrainManager.streetDrainList.compactMap { streetDrain -> CustomAnnotation in
                 CustomAnnotation(title: streetDrain.address, coordinate: CLLocationCoordinate2D(latitude: streetDrain.latitude, longitude: streetDrain.longitude))
             }
             
@@ -92,8 +93,10 @@ struct MapViewRepresentable: UIViewRepresentable {
             }
             
             guard let customAnnotation = annotation as? CustomAnnotation else { return nil }
+        
+            // 위도와 경도를 사용하여 고유한 식별자를 생성
+            let identifier = "CustomAnnotation-\(customAnnotation.coordinate.latitude)-\(customAnnotation.coordinate.longitude)"
             
-            let identifier = "CustomAnnotation"
             var view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             
             if view == nil {
@@ -126,19 +129,24 @@ struct MapViewRepresentable: UIViewRepresentable {
         
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
             if let customAnnotation = view.annotation as? CustomAnnotation {
-                if let streetDrain = parent.streetDrainList.first(where: {$0.address == customAnnotation.title}) {
-                    parent.selectedStreetDrain = streetDrain
+                if let streetDrain = parent.streetDrainManager.streetDrainList.first(where: {
+                        $0.latitude == customAnnotation.coordinate.latitude
+                        && $0.longitude == customAnnotation.coordinate.longitude
+                    }) {
+                    
                     parent.isSheetDisplaying = true
                     
-                    // Update currentLocation and currentAddress using LocationManager
-                   let location = CLLocation(latitude: streetDrain.latitude, longitude: streetDrain.longitude)
-//                   parent.locationManager.convertLocationToAddress(location: location) { [weak self] address in
-//                       guard let self = self else { return }
-//                       DispatchQueue.main.async {
-//                           self.parent.locationManager.currentLocation = location
-//                           self.parent.locationManager.currentPlace = address ?? "Address not found"
-//                       }
-//                   }
+                    // 선택한 배수구 업데이트
+                    parent.selectedStreetDrain = streetDrain
+                    
+                    
+                    
+                    let location = CLLocation(latitude: streetDrain.latitude, longitude: streetDrain.longitude)
+                    
+                    // currentLocation 업데이트
+                    parent.locationManager.currentLocation = location
+                    
+                    // currentAddress 업데이트
                     parent.locationManager.convertLocationToAddress(location: location)
                 }
                 
