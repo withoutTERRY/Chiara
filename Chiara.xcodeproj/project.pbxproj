@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1D9DC216A3B0FEFFF0BB13 /* Pods_Chiara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; };
+		67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A1E2C6767CA001F1577 /* AppDelegate.swift */; };
+		67680A212C676815001F1577 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67680A202C676815001F1577 /* GoogleService-Info.plist */; };
 		67C309F82C6754760084070F /* ChiaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C309F72C6754760084070F /* ChiaraApp.swift */; };
 		67C309FA2C6754760084070F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C309F92C6754760084070F /* ContentView.swift */; };
 		67C309FC2C6754780084070F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67C309FB2C6754780084070F /* Assets.xcassets */; };
@@ -16,11 +19,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67680A1E2C6767CA001F1577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67680A202C676815001F1577 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67C309F42C6754760084070F /* Chiara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chiara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67C309F72C6754760084070F /* ChiaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChiaraApp.swift; sourceTree = "<group>"; };
 		67C309F92C6754760084070F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		67C309FB2C6754780084070F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67C309FE2C6754780084070F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9AD58A4BEA3641F1747BB8FE /* Pods-Chiara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.debug.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.debug.xcconfig"; sourceTree = "<group>"; };
+		C0724CBDB416C350DA45909E /* Pods-Chiara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.release.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.release.xcconfig"; sourceTree = "<group>"; };
 		FB4A04C02C675C73008324F8 /* StreetDrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrain.swift; sourceTree = SOURCE_ROOT; };
 		FB4A04C32C676140008324F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -30,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1D9DC216A3B0FEFFF0BB13 /* Pods_Chiara.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +50,8 @@
 			children = (
 				67C309F62C6754760084070F /* Chiara */,
 				67C309F52C6754760084070F /* Products */,
+				77DBCBC6AF36BCB037062DAD /* Pods */,
+				BE0900C136FFB7281EAC3941 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,7 +87,9 @@
 		67C30A052C6754940084070F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				67680A202C676815001F1577 /* GoogleService-Info.plist */,
 				67C309F72C6754760084070F /* ChiaraApp.swift */,
+				67680A1E2C6767CA001F1577 /* AppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -113,6 +126,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		77DBCBC6AF36BCB037062DAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9AD58A4BEA3641F1747BB8FE /* Pods-Chiara.debug.xcconfig */,
+				C0724CBDB416C350DA45909E /* Pods-Chiara.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE0900C136FFB7281EAC3941 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FB4A04C22C67612D008324F8 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67C30A022C6754780084070F /* Build configuration list for PBXNativeTarget "Chiara" */;
 			buildPhases = (
+				01C0E1D426B0E937D5CCA5A8 /* [CP] Check Pods Manifest.lock */,
 				67C309F02C6754760084070F /* Sources */,
 				67C309F12C6754760084070F /* Frameworks */,
 				67C309F22C6754760084070F /* Resources */,
+				6AD5F6757D7128AFE51CFDE3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,10 +214,53 @@
 			files = (
 				67C309FF2C6754780084070F /* Preview Assets.xcassets in Resources */,
 				67C309FC2C6754780084070F /* Assets.xcassets in Resources */,
+				67680A212C676815001F1577 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01C0E1D426B0E937D5CCA5A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Chiara-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AD5F6757D7128AFE51CFDE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chiara/Pods-Chiara-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chiara/Pods-Chiara-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chiara/Pods-Chiara-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		67C309F02C6754760084070F /* Sources */ = {
@@ -195,6 +270,7 @@
 				FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */,
 				67C309FA2C6754760084070F /* ContentView.swift in Sources */,
 				FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */,
+				67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */,
 				67C309F82C6754760084070F /* ChiaraApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +399,7 @@
 		};
 		67C30A032C6754780084070F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AD58A4BEA3641F1747BB8FE /* Pods-Chiara.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -331,6 +408,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Chiara/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 56LCM2KZR8;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -357,6 +435,7 @@
 		};
 		67C30A042C6754780084070F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0724CBDB416C350DA45909E /* Pods-Chiara.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -365,6 +444,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Chiara/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 56LCM2KZR8;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
