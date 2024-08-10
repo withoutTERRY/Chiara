@@ -18,6 +18,7 @@
 		72B095122C67C38200192F1A /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095112C67C38200192F1A /* Camera.swift */; };
 		72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095132C67C39D00192F1A /* CameraPreviewView.swift */; };
 		72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095152C67C3CA00192F1A /* CameraViewModel.swift */; };
+		FB1050812C67D06F0014097E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050802C67D06F0014097E /* SplashView.swift */; };
 		FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C02C675C73008324F8 /* StreetDrain.swift */; };
 		FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C32C676140008324F8 /* LocationManager.swift */; };
 		FB4A04C62C6764A7008324F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C52C6764A7008324F8 /* MapView.swift */; };
@@ -42,6 +43,7 @@
 		72B095152C67C3CA00192F1A /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		9AD58A4BEA3641F1747BB8FE /* Pods-Chiara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.debug.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.debug.xcconfig"; sourceTree = "<group>"; };
 		C0724CBDB416C350DA45909E /* Pods-Chiara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.release.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.release.xcconfig"; sourceTree = "<group>"; };
+		FB1050802C67D06F0014097E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		FB4A04C02C675C73008324F8 /* StreetDrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StreetDrain.swift; path = Chiara/Models/StreetDrain.swift; sourceTree = SOURCE_ROOT; };
 		FB4A04C32C676140008324F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FB4A04C52C6764A7008324F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				FB4A04C72C6770DE008324F8 /* MapViewRepresentable.swift */,
 				FB4A04C92C6773C1008324F8 /* CustomAnnotation.swift */,
 				FB4A04CB2C677E0B008324F8 /* StreetDrainSheetView.swift */,
+				FB1050802C67D06F0014097E /* SplashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */,
 				72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */,
 				72B0950F2C67C35600192F1A /* CameraView.swift in Sources */,
+				FB1050812C67D06F0014097E /* SplashView.swift in Sources */,
 				FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */,
 				67C309FA2C6754760084070F /* ContentView.swift in Sources */,
 				FB4A04C62C6764A7008324F8 /* MapView.swift in Sources */,
