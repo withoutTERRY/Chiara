@@ -24,7 +24,7 @@ struct CleanSuccessView: View {
             Text("Your work has brought these in Pohang")
                 .foregroundStyle(.gray)
                 .font(.system(size: 17, weight: .medium))
-                .padding(.bottom, 13)
+                .padding(.bottom, 20)
             
             RoundedRectangle(cornerRadius: 20)
                 .foregroundStyle(.lightGray)
