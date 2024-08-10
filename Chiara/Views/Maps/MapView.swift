@@ -20,7 +20,7 @@ struct MapView: View {
     @State private var isSheetDisplaying: Bool = false
     
     @State private var currentSheetHeight: CGFloat = 0.05 // 초기 높이 설정
-        
+    
     let initialSheetHeight: CGFloat = 0.05 // 초기 높이 값 설정
     let sheetHeightsArray = Array(stride(from: 0.45, through: 0.8, by: 0.001))
     let sheetHeights = Set(stride(from: 0.45, through: 0.8, by: 0.001).map { PresentationDetent.fraction($0) })
@@ -28,60 +28,24 @@ struct MapView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
+                // MARK: - 메인으로 표시될 지도
                 MapViewRepresentable(
-                                     region: Binding(
-                                        get: {
-                                            MKCoordinateRegion(
-                                                center: locationManager.currentGeoPoint ?? CLLocationCoordinate2D(latitude: 33.4996213, longitude: 126.5311884),
-                                                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-                                            )
-                                        },
-                                        set: { newRegion in
-                                            locationManager.mapView.setRegion(newRegion, animated: true)
-                                        }
-                                     ),
-                                     selectedStreetDrain: $selectedStreetDrain,
-                                     isSheetDisplaying: $isSheetDisplaying)
+                    region: Binding(
+                        get: {
+                            MKCoordinateRegion(
+                                center: locationManager.currentGeoPoint ?? CLLocationCoordinate2D(latitude: 33.4996213, longitude: 126.5311884),
+                                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                            )
+                        },
+                        set: { newRegion in
+                            locationManager.mapView.setRegion(newRegion, animated: true)
+                        }
+                    ),
+                    selectedStreetDrain: $selectedStreetDrain,
+                    isSheetDisplaying: $isSheetDisplaying)
                 .edgesIgnoringSafeArea(.all)
-                .sheet(isPresented: $isSheetDisplaying, onDismiss: {
-                    // Sheet가 닫힐 때 HStack을 초기 상태로 복귀
-                    withAnimation {
-                        currentSheetHeight = initialSheetHeight
-                    }
-                }) {
-                    if #available(iOS 16.4, *) {
-                        StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
-                            .presentationDetents(sheetHeights,
-                                                 selection: Binding(get: {
-                                                        PresentationDetent.fraction(currentSheetHeight)
-                                                    },
-                                                    set: { newDetent in
-                                                        // 부드러운 애니메이션 추가
-                                                        withAnimation {
-                                                            if let fractionValue = sheetHeightsArray.first(where: {
-                                                                PresentationDetent.fraction($0) == newDetent
-                                                            }) {
-                                                                currentSheetHeight = fractionValue
-                                                            }
-                                                        }
-                                                    }
-                                                ))
-                            .presentationDragIndicator(.visible)
-                            .presentationCornerRadius(15)
-                            .onAppear {
-                                // Sheet가 나타날 때 초기 위치로 설정
-                                withAnimation {
-                                    currentSheetHeight = 0.45
-                                }
-                            }
-                    } else {
-                        StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
-                            .presentationDragIndicator(.visible)
-                            .presentationDetents([.medium])
-                    }
-                }
-                
-                // 화면 그리기
+
+                // MARK: - 지도위에 나타날 화면
                 VStack(spacing: 0) {
                     Spacer()
                     
@@ -107,7 +71,7 @@ struct MapView: View {
                                     .foregroundStyle(.white)
                             }
                             .padding(.all, 10)
-                        
+                            
                             .background {
                                 RoundedRectangle(cornerRadius: 90)
                                     .fill(.black)
@@ -136,6 +100,42 @@ struct MapView: View {
                 .padding(.bottom, geo.size.height * currentSheetHeight + 5) // sheetHeight에 따른 bottom padding 조정
                 .padding(.horizontal, 20)
                 .animation(.easeInOut, value: currentSheetHeight) // 애니메이션 적용
+            }
+            .sheet(isPresented: $isSheetDisplaying, onDismiss: {
+                // Sheet가 닫힐 때 HStack을 초기 상태로 복귀
+                currentSheetHeight = initialSheetHeight
+            }) {
+                if #available(iOS 16.4, *) {
+                    StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
+                        .presentationDetents(sheetHeights,
+                                             selection: Binding(
+                                                get: {
+                                                    PresentationDetent.fraction(currentSheetHeight)
+                                                },
+                                                set: { newDetent in
+                                                    // 부드러운 애니메이션 추가
+                                                    withAnimation {
+                                                        if let fractionValue = sheetHeightsArray.first(where: {
+                                                            PresentationDetent.fraction($0) == newDetent
+                                                        }) {
+                                                            currentSheetHeight = fractionValue
+                                                        }
+                                                    }
+                                                }
+                                             ))
+                        .presentationDragIndicator(.visible)
+                        .presentationCornerRadius(15)
+                        .onAppear {
+                            // Sheet가 나타날 때 초기 위치로 설정
+                            withAnimation {
+                                currentSheetHeight = 0.45
+                            }
+                        }
+                } else {
+                    StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.medium])
+                }
             }
         }
     }

@@ -164,20 +164,8 @@ struct MapViewRepresentable: UIViewRepresentable {
                 view.transform = .identity
                 view.zPriority = .defaultUnselected
             }
-            
-            parent.isSheetDisplaying = false
+//            parent.isSheetDisplaying = false
         }
-        
-        // MARK: - 제주도 밖으로 지도가 이동하지 않게 하는 메소드
-        //        func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        //            let jejuCenter = CLLocationCoordinate2D(latitude: 33.3628, longitude: 126.5334)
-        //            let jejuRegionRadius: CLLocationDistance = 75000
-        //            let jejuRegion = MKCoordinateRegion(center: jejuCenter, latitudinalMeters: jejuRegionRadius * 2, longitudinalMeters: jejuRegionRadius * 2)
-        //
-        //            if !jejuRegion.contains(mapView.centerCoordinate) {
-        //                mapView.setRegion(jejuRegion, animated: true)
-        //            }
-        //        }
     }
 }
 
