@@ -76,7 +76,6 @@ struct MapView: View {
                                 RoundedRectangle(cornerRadius: 90)
                                     .fill(.black)
                             }
-                            // TODO: sheet 크기만큼 바텀 패딩 주기
                         }
                         
                         Spacer()

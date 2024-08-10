@@ -10,7 +10,7 @@ import MapKit
 
 struct StreetDrainSheetView: View {
     @EnvironmentObject var locationManager: LocationManager
-    
+    @EnvironmentObject var routerManager: RouterManager
     var streetDrain: StreetDrain?
     
     @Binding var isSheetDisplaying: Bool
@@ -33,8 +33,8 @@ struct StreetDrainSheetView: View {
                 
                 Spacer()
                 
-                NavigationLink {
-                    // TODO: 이동 동작 추가
+                Button {
+                    routerManager.push(view: .cleanCameraView)
                 } label: {
                     Text("Clean It Up")
                         .font(.title2)

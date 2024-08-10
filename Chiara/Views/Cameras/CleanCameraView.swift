@@ -94,11 +94,12 @@ struct CleanCameraView: View {
                 }
             }
             .padding(.horizontal, 20)
-            .navigationTitle("Upload")
+            .navigationTitle("Check")
             .navigationBarItems(
                 trailing:  Button {
-                    if cameraViewModel.model.recentImage != nil {
-                       
+                    if let image = cameraViewModel.model.recentImage {
+                        // TODO: router 추가
+                        //                        routerManager.push(view: )
                     } else {
                         
                     }
