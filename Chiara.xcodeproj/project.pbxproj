@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A1D9DC216A3B0FEFFF0BB13 /* Pods_Chiara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; };
 		67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A1E2C6767CA001F1577 /* AppDelegate.swift */; };
 		67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A222C6768A9001F1577 /* StreetDrainManager.swift */; };
 		67C309F82C6754760084070F /* ChiaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C309F72C6754760084070F /* ChiaraApp.swift */; };
@@ -18,15 +17,30 @@
 		72B095122C67C38200192F1A /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095112C67C38200192F1A /* Camera.swift */; };
 		72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095132C67C39D00192F1A /* CameraPreviewView.swift */; };
 		72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095152C67C3CA00192F1A /* CameraViewModel.swift */; };
+		8CCCAD1B2C67D65800A1B557 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8CCCAD1A2C67D65800A1B557 /* Lottie */; };
+		8CCCAD1D2C67D6B500A1B557 /* chiara.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CCCAD1C2C67D6B500A1B557 /* chiara.json */; };
+		8CCCAD1F2C67D6F800A1B557 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */; };
+		8CCCAD292C67D7F300A1B557 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CCCAD282C67D7F300A1B557 /* GoogleService-Info.plist */; };
+		8CCCAD2A2C67D8F000A1B557 /* Pods_Chiara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; };
+		8CCCAD2B2C67D8F000A1B557 /* Pods_Chiara.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FB1050812C67D06F0014097E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050802C67D06F0014097E /* SplashView.swift */; };
 		FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C02C675C73008324F8 /* StreetDrain.swift */; };
 		FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C32C676140008324F8 /* LocationManager.swift */; };
-		FB4A04C62C6764A7008324F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C52C6764A7008324F8 /* MapView.swift */; };
-		FB4A04C82C6770DE008324F8 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C72C6770DE008324F8 /* MapViewRepresentable.swift */; };
-		FB4A04CA2C6773C1008324F8 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C92C6773C1008324F8 /* CustomAnnotation.swift */; };
-		FB4A04CC2C677E0B008324F8 /* StreetDrainSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04CB2C677E0B008324F8 /* StreetDrainSheetView.swift */; };
-		FB4A04D02C679B1F008324F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB4A04CF2C679B1F008324F8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8CCCAD2C2C67D8F000A1B557 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8CCCAD2B2C67D8F000A1B557 /* Pods_Chiara.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,16 +55,14 @@
 		72B095112C67C38200192F1A /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		72B095132C67C39D00192F1A /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		72B095152C67C3CA00192F1A /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		8CCCAD1C2C67D6B500A1B557 /* chiara.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chiara.json; sourceTree = "<group>"; };
+		8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		8CCCAD282C67D7F300A1B557 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9AD58A4BEA3641F1747BB8FE /* Pods-Chiara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.debug.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.debug.xcconfig"; sourceTree = "<group>"; };
 		C0724CBDB416C350DA45909E /* Pods-Chiara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.release.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.release.xcconfig"; sourceTree = "<group>"; };
 		FB1050802C67D06F0014097E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		FB4A04C02C675C73008324F8 /* StreetDrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StreetDrain.swift; path = Chiara/Models/StreetDrain.swift; sourceTree = SOURCE_ROOT; };
 		FB4A04C32C676140008324F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		FB4A04C52C6764A7008324F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		FB4A04C72C6770DE008324F8 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
-		FB4A04C92C6773C1008324F8 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
-		FB4A04CB2C677E0B008324F8 /* StreetDrainSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrainSheetView.swift; sourceTree = "<group>"; };
-		FB4A04CF2C679B1F008324F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A1D9DC216A3B0FEFFF0BB13 /* Pods_Chiara.framework in Frameworks */,
+				8CCCAD2A2C67D8F000A1B557 /* Pods_Chiara.framework in Frameworks */,
+				8CCCAD1B2C67D65800A1B557 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +120,7 @@
 		67C30A052C6754940084070F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FB4A04CF2C679B1F008324F8 /* GoogleService-Info.plist */,
+				8CCCAD282C67D7F300A1B557 /* GoogleService-Info.plist */,
 				67C309F72C6754760084070F /* ChiaraApp.swift */,
 				67680A1E2C6767CA001F1577 /* AppDelegate.swift */,
 			);
@@ -120,11 +133,9 @@
 				FB4A04CE2C679998008324F8 /* Maps */,
 				67C309F92C6754760084070F /* ContentView.swift */,
 				72B095102C67C35A00192F1A /* CameraView */,
-				FB4A04C52C6764A7008324F8 /* MapView.swift */,
-				FB4A04C72C6770DE008324F8 /* MapViewRepresentable.swift */,
-				FB4A04C92C6773C1008324F8 /* CustomAnnotation.swift */,
-				FB4A04CB2C677E0B008324F8 /* StreetDrainSheetView.swift */,
 				FB1050802C67D06F0014097E /* SplashView.swift */,
+				8CCCAD1C2C67D6B500A1B557 /* chiara.json */,
+				8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,14 +154,6 @@
 			children = (
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		67C30A092C6754B00084070F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				FB4A04C02C675C73008324F8 /* StreetDrain.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		72B095102C67C35A00192F1A /* CameraView */ = {
@@ -201,10 +204,6 @@
 		FB4A04CE2C679998008324F8 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				FB4A04C52C6764A7008324F8 /* MapView.swift */,
-				FB4A04C72C6770DE008324F8 /* MapViewRepresentable.swift */,
-				FB4A04C92C6773C1008324F8 /* CustomAnnotation.swift */,
-				FB4A04CB2C677E0B008324F8 /* StreetDrainSheetView.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -221,12 +220,16 @@
 				67C309F12C6754760084070F /* Frameworks */,
 				67C309F22C6754760084070F /* Resources */,
 				6AD5F6757D7128AFE51CFDE3 /* [CP] Embed Pods Frameworks */,
+				8CCCAD2C2C67D8F000A1B557 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Chiara;
+			packageProductDependencies = (
+				8CCCAD1A2C67D65800A1B557 /* Lottie */,
+			);
 			productName = Chiara;
 			productReference = 67C309F42C6754760084070F /* Chiara.app */;
 			productType = "com.apple.product-type.application";
@@ -256,6 +259,9 @@
 				en,
 			);
 			mainGroup = 67C309EB2C6754760084070F;
+			packageReferences = (
+				8CCCAD192C67D65800A1B557 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 67C309F52C6754760084070F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,8 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				67C309FF2C6754780084070F /* Preview Assets.xcassets in Resources */,
+				8CCCAD292C67D7F300A1B557 /* GoogleService-Info.plist in Resources */,
 				67C309FC2C6754780084070F /* Assets.xcassets in Resources */,
-				FB4A04D02C679B1F008324F8 /* GoogleService-Info.plist in Resources */,
+				8CCCAD1D2C67D6B500A1B557 /* chiara.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,14 +339,11 @@
 				72B0950F2C67C35600192F1A /* CameraView.swift in Sources */,
 				FB1050812C67D06F0014097E /* SplashView.swift in Sources */,
 				FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */,
+				8CCCAD1F2C67D6F800A1B557 /* LottieView.swift in Sources */,
 				67C309FA2C6754760084070F /* ContentView.swift in Sources */,
-				FB4A04C62C6764A7008324F8 /* MapView.swift in Sources */,
 				FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */,
 				67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */,
-				FB4A04C82C6770DE008324F8 /* MapViewRepresentable.swift in Sources */,
 				67C309F82C6754760084070F /* ChiaraApp.swift in Sources */,
-				FB4A04CC2C677E0B008324F8 /* StreetDrainSheetView.swift in Sources */,
-				FB4A04CA2C6773C1008324F8 /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +478,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chiara/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 2UWGKS2UN5;
+				DEVELOPMENT_TEAM = N8UAK95HX5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -511,7 +515,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chiara/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 2UWGKS2UN5;
+				DEVELOPMENT_TEAM = N8UAK95HX5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -561,6 +565,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8CCCAD192C67D65800A1B557 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8CCCAD1A2C67D65800A1B557 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CCCAD192C67D65800A1B557 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 67C309EC2C6754760084070F /* Project object */;
 }

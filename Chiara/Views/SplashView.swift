@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SplashView: View {
     var body: some View {
-        Text("Hello, World!")
+            LottieView(jsonName: "chiara")
+                .padding(.bottom, 90)
     }
 }
 
