@@ -12,6 +12,7 @@
 		67C309FC2C6754780084070F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67C309FB2C6754780084070F /* Assets.xcassets */; };
 		67C309FF2C6754780084070F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67C309FE2C6754780084070F /* Preview Assets.xcassets */; };
 		FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C02C675C73008324F8 /* StreetDrain.swift */; };
+		FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C32C676140008324F8 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		67C309FB2C6754780084070F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67C309FE2C6754780084070F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FB4A04C02C675C73008324F8 /* StreetDrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrain.swift; sourceTree = SOURCE_ROOT; };
+		FB4A04C32C676140008324F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		67C309F62C6754760084070F /* Chiara */ = {
 			isa = PBXGroup;
 			children = (
+				FB4A04C22C67612D008324F8 /* Managers */,
 				67C30A092C6754B00084070F /* Models */,
 				67C30A082C6754AB0084070F /* Helpers */,
 				67C30A072C6754A20084070F /* Resources */,
@@ -108,6 +111,14 @@
 				FB4A04C02C675C73008324F8 /* StreetDrain.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FB4A04C22C67612D008324F8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FB4A04C32C676140008324F8 /* LocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */,
 				67C309FA2C6754760084070F /* ContentView.swift in Sources */,
 				FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */,
 				67C309F82C6754760084070F /* ChiaraApp.swift in Sources */,
