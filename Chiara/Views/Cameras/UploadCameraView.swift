@@ -5,24 +5,40 @@
 //  Created by Lee Sihyeong on 8/11/24.
 //
 
+//
+//  CameraView.swift
+//  Chiara
+//
+//  Created by Lee Sihyeong on 8/11/24.
+//
+
 import SwiftUI
 
-struct CameraView: View {
-    @ObservedObject var cameraViewModel: CameraViewModel
+struct UploadCameraView: View {
+    @EnvironmentObject var cameraViewModel: CameraViewModel
+    @EnvironmentObject var routerManager: RouterManager
+    
     @State var isShuttered: Bool = false
-    @State private var showModelProcessView: Bool = false
-
+    
+    var bottomText: String {
+        if !isShuttered { // 셔터 누르기 전
+            return "Check the state of the street drain!"
+        } else if self.cameraViewModel.model.recentImage == nil { // 셔터는 눌렀으나 사진이 없는 경우
+            return "please take a photo again!"
+        } else { // 성공
+            return "Go to the next step!"
+        }
+    }
+    
     var body: some View {
-        NavigationStack {
+        VStack {
+            Spacer().frame(height: 10)
+            
             ZStack(alignment: .bottom) {
+                // MARK: - 아직 사진을 찍기 전
                 if !isShuttered {
                     cameraViewModel.cameraPreview
-                        .onAppear {
-                            cameraViewModel.configure()
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 135)
-
+                    
                     Button {
                         cameraViewModel.capturePhoto()
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
@@ -41,23 +57,22 @@ struct CameraView: View {
                                 .foregroundStyle(.white)
                         }
                     }
-                    .padding(.bottom, 135 + 16)
-                    //.padding(.bottom, 55)
+                    .padding(.bottom, 16)
                     
-                    Text("Take a photo of the street drain")
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.darkGray)
-                        .padding(.bottom, 250)
+//                    Text("Take a photo of the street drain")
+//                        .fontWeight(.semibold)
+//                        .foregroundStyle(.darkGray)
+//                        .padding(.bottom, 250)
                     
-                } else {
+                }
+                // MARK: - 사진을 찍은 뒤
+                else {
                     if let recentImage = cameraViewModel.model.recentImage {
                         Image(uiImage: recentImage)
                             .resizable()
                             .clipShape(RoundedRectangle(cornerRadius: 40))
-                            .padding(.horizontal, 20)
-                            .padding(.vertical, 135)
                     }
-
+                    
                     Button {
                         isShuttered = false
                     } label: {
@@ -75,31 +90,41 @@ struct CameraView: View {
                                 .foregroundStyle(.black)
                         }
                     }
-                    .padding(.bottom, 135 + 16)
+                    .padding(.bottom, 16)
                     
-                    Text("Go to next step")
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.darkGray)
-                        .padding(.bottom, 250)
-                    
-
-                    NavigationLink(
-                        destination: ModelProcessView(image: cameraViewModel.model.recentImage),
-                        isActive: $showModelProcessView
-                    ) {
-                        EmptyView()
-                    }
-                    
-                    
+//                    Text("Go to next step")
+//                        .fontWeight(.semibold)
+//                        .foregroundStyle(.darkGray)
+//                        .padding(.bottom, 250)
                 }
             }
-            .navigationTitle("Upload")
-            .ignoresSafeArea()
-            .navigationBarItems(trailing: Button("Next") {
+            
+            Spacer().frame(height: 30)
+            
+            HStack {
+                Spacer()
+                Text("\(bottomText)")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.gray)
+                Spacer()
+            }
+        }
+        .padding(.horizontal, 20)
+        .navigationTitle("Upload")
+        .navigationBarItems(
+            trailing:  Button {
                 if cameraViewModel.model.recentImage != nil {
-                    showModelProcessView = true
+//                    routerManager.push(view: .coreModelProcessView(image: cameraViewModel.model.recentImage))
+                } else {
+                    
                 }
-            })
+            } label: {
+                Text("Next")
+            }
+        )
+        .onAppear {
+            cameraViewModel.configure()
         }
     }
 }

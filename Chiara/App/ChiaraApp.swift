@@ -14,6 +14,7 @@ struct ChiaraApp: App {
     @StateObject private var locationManager = LocationManager()
     @StateObject private var streetDrainManager = StreetDrainManager.shared
     @StateObject private var routerManager = RouterManager()
+    @StateObject private var cameraViewModel = CameraViewModel()
     
     @State private var isLoading: Bool = false
     @State private var showSplashView: Bool = true
@@ -49,6 +50,7 @@ struct ChiaraApp: App {
             .environmentObject(locationManager)
             .environmentObject(streetDrainManager)
             .environmentObject(routerManager)
+            .environmentObject(cameraViewModel)
             .tint(.black)
         }
     }
