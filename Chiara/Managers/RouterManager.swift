@@ -15,8 +15,13 @@ class RouterManager: ObservableObject {
         switch route {
         case .mapView:
             MapView()
+            
         case .cameraView:
             CameraView()
+            
+        case .coreModelProcessView(let image):
+            CoreModelProcessView(image: image)
+            
         }
     }
     
@@ -29,7 +34,7 @@ class RouterManager: ObservableObject {
     }
     
     func backToMap(){
-        //        self.path = NavigationPath()
+        self.path = NavigationPath()
         path.append(ChiaraView.mapView)
     }
 }
@@ -37,5 +42,6 @@ class RouterManager: ObservableObject {
 enum ChiaraView: Hashable {
     case mapView
     case cameraView
+    case coreModelProcessView(image: UIImage?)
 }
 
