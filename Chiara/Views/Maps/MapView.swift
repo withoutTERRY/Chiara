@@ -52,7 +52,7 @@ struct MapView: View {
                     
                     HStack(spacing: 0) {
                         Button {
-//                            routerManager.push(view: .cameraView)
+                            routerManager.push(view: .cameraView)
                         } label: {
                             HStack(spacing: 10) {
                                 Image(systemName: "trash.fill")

@@ -1,5 +1,5 @@
 //
-//  ModelProcessView.swift
+//  CoreModelProcessView.swift
 //  Chiara
 //
 //  Created by 추서연 on 8/11/24.
@@ -10,7 +10,7 @@ import SwiftUI
 import CoreML
 import Vision
 
-struct ModelProcessView: View {
+struct CoreModelProcessView: View {
     let image: UIImage?
     @State private var result: AnyView = AnyView(Text(""))
     @State private var buttonTitle: String = "Process Image"

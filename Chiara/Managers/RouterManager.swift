@@ -15,8 +15,8 @@ class RouterManager: ObservableObject {
         switch route {
         case .mapView:
             MapView()
-//        case .cameraView:
-//            CameraView()
+        case .cameraView:
+            CameraView()
         }
     }
     
@@ -28,7 +28,7 @@ class RouterManager: ObservableObject {
         path.removeLast()
     }
     
-    func backToHome(){
+    func backToMap(){
         //        self.path = NavigationPath()
         path.append(ChiaraView.mapView)
     }
@@ -36,6 +36,6 @@ class RouterManager: ObservableObject {
 
 enum ChiaraView: Hashable {
     case mapView
-//    case cameraView
+    case cameraView
 }
 
