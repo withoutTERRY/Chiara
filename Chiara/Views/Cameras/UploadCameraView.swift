@@ -5,9 +5,16 @@
 //  Created by Lee Sihyeong on 8/11/24.
 //
 
+//
+//  CameraView.swift
+//  Chiara
+//
+//  Created by Lee Sihyeong on 8/11/24.
+//
+
 import SwiftUI
 
-struct CameraView: View {
+struct UploadCameraView: View {
     @EnvironmentObject var cameraViewModel: CameraViewModel
     @EnvironmentObject var routerManager: RouterManager
     
@@ -91,6 +98,7 @@ struct CameraView: View {
 //                        .padding(.bottom, 250)
                 }
             }
+            
             Spacer().frame(height: 30)
             
             HStack {
@@ -101,16 +109,15 @@ struct CameraView: View {
                     .foregroundStyle(.gray)
                 Spacer()
             }
-            Spacer().frame(height: 10)
         }
         .padding(.horizontal, 20)
         .navigationTitle("Upload")
         .navigationBarItems(
             trailing:  Button {
-                if let image = cameraViewModel.model.recentImage {
-                    routerManager.push(view: .coreModelProcessView(image: image))
+                if cameraViewModel.model.recentImage != nil {
+//                    routerManager.push(view: .coreModelProcessView(image: cameraViewModel.model.recentImage))
                 } else {
-                    // TODO: 예외처리
+                    
                 }
             } label: {
                 Text("Next")

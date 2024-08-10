@@ -11,15 +11,24 @@
 		46046DEB2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46046DEA2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel */; };
 		46046DED2C67E79000DB3AE8 /* NewLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */; };
 		4647CDAC2C67F112002C44AC /* CoreModelProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647CDAB2C67F112002C44AC /* CoreModelProcessView.swift */; };
+		46046DED2C67E79000DB3AE8 /* SelectLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46046DEC2C67E79000DB3AE8 /* SelectLocationView.swift */; };
+		4647CDAC2C67F112002C44AC /* ModelProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647CDAB2C67F112002C44AC /* ModelProcessView.swift */; };
+		4647CDB22C67F86B002C44AC /* CoreModelLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647CDB12C67F86B002C44AC /* CoreModelLoadingView.swift */; };
+		670BCA3C2C67F8990033C684 /* LocationMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670BCA3B2C67F8990033C684 /* LocationMapViewRepresentable.swift */; };
 		67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A1E2C6767CA001F1577 /* AppDelegate.swift */; };
 		67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A222C6768A9001F1577 /* StreetDrainManager.swift */; };
 		67C309F82C6754760084070F /* ChiaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C309F72C6754760084070F /* ChiaraApp.swift */; };
 		67C309FC2C6754780084070F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67C309FB2C6754780084070F /* Assets.xcassets */; };
 		67C309FF2C6754780084070F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67C309FE2C6754780084070F /* Preview Assets.xcassets */; };
-		72B0950F2C67C35600192F1A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B0950E2C67C35600192F1A /* CameraView.swift */; };
+		67C6F9292C67FDC3008EA948 /* HereAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C6F9282C67FDC3008EA948 /* HereAnnotation.swift */; };
+		67C6F92C2C68020D008EA948 /* SelectLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C6F92B2C68020D008EA948 /* SelectLocationMapView.swift */; };
+		67C6F92E2C6818D8008EA948 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67C6F92D2C6818D8008EA948 /* GoogleService-Info.plist */; };
 		72B095122C67C38200192F1A /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095112C67C38200192F1A /* Camera.swift */; };
 		72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095132C67C39D00192F1A /* CameraPreviewView.swift */; };
 		72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095152C67C3CA00192F1A /* CameraViewModel.swift */; };
+		72D4CD2C2C6807D6009B4F54 /* CleanCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D4CD2B2C6807D6009B4F54 /* CleanCameraView.swift */; };
+		72FE83BF2C67F16100D0180C /* UploadSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE83BE2C67F16100D0180C /* UploadSuccessView.swift */; };
+		72FE83C72C67F1B500D0180C /* CleanSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE83C62C67F1B500D0180C /* CleanSuccessView.swift */; };
 		8CCCAD1B2C67D65800A1B557 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8CCCAD1A2C67D65800A1B557 /* Lottie */; };
 		8CCCAD1D2C67D6B500A1B557 /* chiara.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CCCAD1C2C67D6B500A1B557 /* chiara.json */; };
 		8CCCAD1F2C67D6F800A1B557 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */; };
@@ -59,16 +68,27 @@
 		46046DEA2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = StreetDrainCleanness_1.mlmodel; sourceTree = "<group>"; };
 		46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationView.swift; sourceTree = "<group>"; };
 		4647CDAB2C67F112002C44AC /* CoreModelProcessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreModelProcessView.swift; sourceTree = "<group>"; };
+		46046DEC2C67E79000DB3AE8 /* SelectLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationView.swift; sourceTree = "<group>"; };
+		4647CDAB2C67F112002C44AC /* ModelProcessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelProcessView.swift; path = ModelView/ModelProcessView.swift; sourceTree = "<group>"; };
+		4647CDB12C67F86B002C44AC /* CoreModelLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModelLoadingView.swift; sourceTree = "<group>"; };
+		670BCA3B2C67F8990033C684 /* LocationMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewRepresentable.swift; sourceTree = "<group>"; };
 		67680A1E2C6767CA001F1577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67680A222C6768A9001F1577 /* StreetDrainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrainManager.swift; sourceTree = "<group>"; };
 		67C309F42C6754760084070F /* Chiara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chiara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67C309F72C6754760084070F /* ChiaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChiaraApp.swift; sourceTree = "<group>"; };
 		67C309FB2C6754780084070F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67C309FE2C6754780084070F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		67C6F9282C67FDC3008EA948 /* HereAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereAnnotation.swift; sourceTree = "<group>"; };
+		67C6F92A2C67FE1C008EA948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		67C6F92B2C68020D008EA948 /* SelectLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationMapView.swift; sourceTree = "<group>"; };
+		67C6F92D2C6818D8008EA948 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72B0950E2C67C35600192F1A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		72B095112C67C38200192F1A /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		72B095132C67C39D00192F1A /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		72B095152C67C3CA00192F1A /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		72D4CD2B2C6807D6009B4F54 /* CleanCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanCameraView.swift; sourceTree = "<group>"; };
+		72FE83BE2C67F16100D0180C /* UploadSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSuccessView.swift; sourceTree = "<group>"; };
+		72FE83C62C67F1B500D0180C /* CleanSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanSuccessView.swift; sourceTree = "<group>"; };
 		8CCCAD1C2C67D6B500A1B557 /* chiara.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chiara.json; sourceTree = "<group>"; };
 		8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		9AD58A4BEA3641F1747BB8FE /* Pods-Chiara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.debug.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +133,7 @@
 			children = (
 				4647CDAB2C67F112002C44AC /* CoreModelProcessView.swift */,
 				FB1050962C681C260014097E /* CoreModelLoadingView.swift */,
+				4647CDB12C67F86B002C44AC /* CoreModelLoadingView.swift */,
 			);
 			path = CoreModelView;
 			sourceTree = "<group>";
@@ -139,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				FB1050932C680A670014097E /* Components */,
+				67C6F92A2C67FE1C008EA948 /* Info.plist */,
 				FB4A04CD2C678206008324F8 /* Models */,
 				FB4A04C22C67612D008324F8 /* Managers */,
 				67C30A082C6754AB0084070F /* Helpers */,
@@ -161,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				FB1050902C67F2890014097E /* GoogleService-Info.plist */,
+				67C6F92D2C6818D8008EA948 /* GoogleService-Info.plist */,
 				67680A1E2C6767CA001F1577 /* AppDelegate.swift */,
 				67C309F72C6754760084070F /* ChiaraApp.swift */,
 			);
@@ -175,6 +198,19 @@
 				46046DE32C67C76300DB3AE8 /* CoreModelView */,
 				72B095102C67C35A00192F1A /* CameraView */,
 				46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */,
+				72FE83BE2C67F16100D0180C /* UploadSuccessView.swift */,
+				72FE83C62C67F1B500D0180C /* CleanSuccessView.swift */,
+				FB1050802C67D06F0014097E /* SplashView.swift */,
+				8CCCAD1C2C67D6B500A1B557 /* chiara.json */,
+				8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */,
+				4647CDAB2C67F112002C44AC /* ModelProcessView.swift */,
+				46046DE32C67C76300DB3AE8 /* ModelView */,
+				67C309F92C6754760084070F /* ContentView.swift */,
+				72B095102C67C35A00192F1A /* Cameras */,
+				46046DEC2C67E79000DB3AE8 /* SelectLocationView.swift */,
+				67C6F92B2C68020D008EA948 /* SelectLocationMapView.swift */,
+				67C6F9282C67FDC3008EA948 /* HereAnnotation.swift */,
+				670BCA3B2C67F8990033C684 /* LocationMapViewRepresentable.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,16 +232,17 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		72B095102C67C35A00192F1A /* CameraView */ = {
+		72B095102C67C35A00192F1A /* Cameras */ = {
 			isa = PBXGroup;
 			children = (
 				72B0950E2C67C35600192F1A /* CameraView.swift */,
+				72D4CD2B2C6807D6009B4F54 /* CleanCameraView.swift */,
 				72B095112C67C38200192F1A /* Camera.swift */,
 				72B095132C67C39D00192F1A /* CameraPreviewView.swift */,
 				72B095152C67C3CA00192F1A /* CameraViewModel.swift */,
 				FB1050982C681C630014097E /* CleanCameraView.swift */,
 			);
-			path = CameraView;
+			path = Cameras;
 			sourceTree = "<group>";
 		};
 		77DBCBC6AF36BCB037062DAD /* Pods */ = {
@@ -343,6 +380,7 @@
 			files = (
 				67C309FF2C6754780084070F /* Preview Assets.xcassets in Resources */,
 				FB1050912C67F2890014097E /* GoogleService-Info.plist in Resources */,
+				67C6F92E2C6818D8008EA948 /* GoogleService-Info.plist in Resources */,
 				67C309FC2C6754780084070F /* Assets.xcassets in Resources */,
 				8CCCAD1D2C67D6B500A1B557 /* chiara.json in Resources */,
 			);
@@ -403,11 +441,16 @@
 				FB1050892C67D3940014097E /* CustomAnnotation.swift in Sources */,
 				FB1050992C681C630014097E /* CleanCameraView.swift in Sources */,
 				46046DEB2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel in Sources */,
+				72D4CD2C2C6807D6009B4F54 /* CleanCameraView.swift in Sources */,
 				67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */,
+				72FE83BF2C67F16100D0180C /* UploadSuccessView.swift in Sources */,
 				72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */,
 				72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */,
 				FB1050972C681C260014097E /* CoreModelLoadingView.swift in Sources */,
 				72B0950F2C67C35600192F1A /* CameraView.swift in Sources */,
+				72FE83C72C67F1B500D0180C /* CleanSuccessView.swift in Sources */,
+				67C6F92C2C68020D008EA948 /* SelectLocationMapView.swift in Sources */,
+				67C6F9292C67FDC3008EA948 /* HereAnnotation.swift in Sources */,
 				FB1050872C67D3940014097E /* MapViewRepresentable.swift in Sources */,
 				FB1050812C67D06F0014097E /* SplashView.swift in Sources */,
 				FB10508B2C67DD1E0014097E /* RouterManager.swift in Sources */,
@@ -415,8 +458,13 @@
 				8CCCAD1F2C67D6F800A1B557 /* LottieView.swift in Sources */,
 				4647CDAC2C67F112002C44AC /* CoreModelProcessView.swift in Sources */,
 				FB1050952C680A860014097E /* ButtonLabel.swift in Sources */,
+				670BCA3C2C67F8990033C684 /* LocationMapViewRepresentable.swift in Sources */,
+				67C309FA2C6754760084070F /* ContentView.swift in Sources */,
+				4647CDAC2C67F112002C44AC /* ModelProcessView.swift in Sources */,
 				FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */,
-				46046DED2C67E79000DB3AE8 /* NewLocationView.swift in Sources */,
+				46046DED2C67E79000DB3AE8 /* SelectLocationView.swift in Sources */,
+				4647CDB22C67F86B002C44AC /* CoreModelLoadingView.swift in Sources */,
+				46046DED2C67E79000DB3AE8 /* SelectLocationView.swift in Sources */,
 				67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */,
 				67C309F82C6754760084070F /* ChiaraApp.swift in Sources */,
 				46046DDE2C67BAE600DB3AE8 /* DrainClassification.swift in Sources */,
@@ -478,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -535,7 +583,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -559,6 +607,12 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 권한을 허용해주세요.";
+				DEVELOPMENT_TEAM = 56LCM2KZR8;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Chiara/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = Camera;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 권한을 허용해주세요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -597,6 +651,12 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 권한을 허용해주세요.";
+				DEVELOPMENT_TEAM = 56LCM2KZR8;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Chiara/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = Camera;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 권한을 허용해주세요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
