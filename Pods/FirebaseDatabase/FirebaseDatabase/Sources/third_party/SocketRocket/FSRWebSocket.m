@@ -1478,21 +1478,44 @@ static const size_t SRFrameHeaderOverhead = 32;
         if (sslCerts) {
             SecTrustRef secTrust = (__bridge SecTrustRef)[aStream propertyForKey:(__bridge id)kCFStreamPropertySSLPeerTrust];
             if (secTrust) {
-                NSInteger numCerts = SecTrustGetCertificateCount(secTrust);
-                for (NSInteger i = 0; i < numCerts && !_pinnedCertFound; i++) {
-                    SecCertificateRef cert = SecTrustGetCertificateAtIndex(secTrust, i);
-                    NSData *certData = CFBridgingRelease(SecCertificateCopyData(cert));
+                // iOS 버전에 따라 분기 처리
+                if (@available(iOS 15.0, *)) {
+                    CFArrayRef certChain = SecTrustCopyCertificateChain(secTrust);
+                    NSArray *certArray = CFBridgingRelease(certChain);
+                    
+                    for (id certRef in certArray) {
+                        SecCertificateRef cert = (__bridge SecCertificateRef)certRef;
+                        NSData *certData = CFBridgingRelease(SecCertificateCopyData(cert));
 
-                    for (id ref in sslCerts) {
-                        SecCertificateRef trustedCert = (__bridge SecCertificateRef)ref;
-                        NSData *trustedCertData = CFBridgingRelease(SecCertificateCopyData(trustedCert));
+                        for (id trustedCertRef in sslCerts) {
+                            SecCertificateRef trustedCert = (__bridge SecCertificateRef)trustedCertRef;
+                            NSData *trustedCertData = CFBridgingRelease(SecCertificateCopyData(trustedCert));
 
-                        if ([trustedCertData isEqualToData:certData]) {
-                            _pinnedCertFound = YES;
-                            break;
+                            if ([trustedCertData isEqualToData:certData]) {
+                                _pinnedCertFound = YES;
+                                break;
+                            }
                         }
                     }
                 }
+//                else {
+//                    // iOS 15.0 미만의 경우, 기존의 SecTrustGetCertificateAtIndex 사용
+//                    NSInteger numCerts = SecTrustGetCertificateCount(secTrust);
+//                    for (NSInteger i = 0; i < numCerts && !_pinnedCertFound; i++) {
+//                        SecCertificateRef cert = SecTrustGetCertificateAtIndex(secTrust, i);
+//                        NSData *certData = CFBridgingRelease(SecCertificateCopyData(cert));
+//
+//                        for (id trustedCertRef in sslCerts) {
+//                            SecCertificateRef trustedCert = (__bridge SecCertificateRef)trustedCertRef;
+//                            NSData *trustedCertData = CFBridgingRelease(SecCertificateCopyData(trustedCert));
+//
+//                            if ([trustedCertData isEqualToData:certData]) {
+//                                _pinnedCertFound = YES;
+//                                break;
+//                            }
+//                        }
+//                    }
+//                }
             }
 
             if (!_pinnedCertFound) {
