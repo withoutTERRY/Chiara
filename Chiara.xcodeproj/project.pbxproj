@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A1D9DC216A3B0FEFFF0BB13 /* Pods_Chiara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; };
 		67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A1E2C6767CA001F1577 /* AppDelegate.swift */; };
-		67680A212C676815001F1577 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67680A202C676815001F1577 /* GoogleService-Info.plist */; };
 		67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A222C6768A9001F1577 /* StreetDrainManager.swift */; };
 		67C309F82C6754760084070F /* ChiaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C309F72C6754760084070F /* ChiaraApp.swift */; };
 		67C309FA2C6754760084070F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C309F92C6754760084070F /* ContentView.swift */; };
@@ -25,12 +24,12 @@
 		FB4A04C82C6770DE008324F8 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C72C6770DE008324F8 /* MapViewRepresentable.swift */; };
 		FB4A04CA2C6773C1008324F8 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C92C6773C1008324F8 /* CustomAnnotation.swift */; };
 		FB4A04CC2C677E0B008324F8 /* StreetDrainSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04CB2C677E0B008324F8 /* StreetDrainSheetView.swift */; };
+		FB4A04D02C679B1F008324F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB4A04CF2C679B1F008324F8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67680A1E2C6767CA001F1577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		67680A202C676815001F1577 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67680A222C6768A9001F1577 /* StreetDrainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrainManager.swift; sourceTree = "<group>"; };
 		67C309F42C6754760084070F /* Chiara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chiara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67C309F72C6754760084070F /* ChiaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChiaraApp.swift; sourceTree = "<group>"; };
@@ -43,13 +42,13 @@
 		72B095152C67C3CA00192F1A /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		9AD58A4BEA3641F1747BB8FE /* Pods-Chiara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.debug.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.debug.xcconfig"; sourceTree = "<group>"; };
 		C0724CBDB416C350DA45909E /* Pods-Chiara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.release.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.release.xcconfig"; sourceTree = "<group>"; };
-		FB4A04C02C675C73008324F8 /* StreetDrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrain.swift; sourceTree = SOURCE_ROOT; };
 		FB4A04C02C675C73008324F8 /* StreetDrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StreetDrain.swift; path = Chiara/Models/StreetDrain.swift; sourceTree = SOURCE_ROOT; };
 		FB4A04C32C676140008324F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FB4A04C52C6764A7008324F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		FB4A04C72C6770DE008324F8 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		FB4A04C92C6773C1008324F8 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		FB4A04CB2C677E0B008324F8 /* StreetDrainSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrainSheetView.swift; sourceTree = "<group>"; };
+		FB4A04CF2C679B1F008324F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +105,7 @@
 		67C30A052C6754940084070F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				67680A202C676815001F1577 /* GoogleService-Info.plist */,
+				FB4A04CF2C679B1F008324F8 /* GoogleService-Info.plist */,
 				67C309F72C6754760084070F /* ChiaraApp.swift */,
 				67680A1E2C6767CA001F1577 /* AppDelegate.swift */,
 			);
@@ -246,11 +245,12 @@
 			};
 			buildConfigurationList = 67C309EF2C6754760084070F /* Build configuration list for PBXProject "Chiara" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = ko;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
 				ko,
+				en,
 			);
 			mainGroup = 67C309EB2C6754760084070F;
 			productRefGroup = 67C309F52C6754760084070F /* Products */;
@@ -269,7 +269,7 @@
 			files = (
 				67C309FF2C6754780084070F /* Preview Assets.xcassets in Resources */,
 				67C309FC2C6754780084070F /* Assets.xcassets in Resources */,
-				67680A212C676815001F1577 /* GoogleService-Info.plist in Resources */,
+				FB4A04D02C679B1F008324F8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
