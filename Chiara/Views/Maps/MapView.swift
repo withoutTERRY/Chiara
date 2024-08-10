@@ -10,6 +10,7 @@ import MapKit
 
 struct MapView: View {
     @EnvironmentObject var locationManager: LocationManager
+    @EnvironmentObject var routerManager: RouterManager
     
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 33.4996213, longitude: 126.5311884),
@@ -50,9 +51,8 @@ struct MapView: View {
                     Spacer()
                     
                     HStack(spacing: 0) {
-                        // MARK: - 하수구 추가 버튼
                         Button {
-                            // TODO: Route 추가
+//                            routerManager.push(view: .cameraView)
                         } label: {
                             HStack(spacing: 10) {
                                 Image(systemName: "trash.fill")

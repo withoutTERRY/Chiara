@@ -13,13 +13,14 @@ struct ChiaraApp: App {
     
     @StateObject private var locationManager = LocationManager()
     @StateObject private var streetDrainManager = StreetDrainManager.shared
+    @StateObject private var routerManager = RouterManager()
     
     @State private var isLoading: Bool = false
     @State private var showSplashView: Bool = false
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
+            NavigationStack(path: $routerManager.path) {
                 if showSplashView {
                     SplashView()
                         .onAppear {
@@ -47,6 +48,8 @@ struct ChiaraApp: App {
             }
             .environmentObject(locationManager)
             .environmentObject(streetDrainManager)
+            .environmentObject(routerManager)
+            .tint(.black)
         }
     }
 }
