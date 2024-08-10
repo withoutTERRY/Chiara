@@ -9,13 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack(alignment: .leading) {
+                Spacer()
+                HStack {
+                    NavigationLink {
+                        CameraView(cameraViewModel: CameraViewModel())
+                    } label: {
+                        RoundedRectangle(cornerRadius: 90)
+                            .frame(width: 170, height: 42)
+                            .padding(.leading, 20)
+                            .padding(.bottom, 30)
+                            .foregroundStyle(.black)
+                    }
+                    Spacer()
+                }
+            }
+            .ignoresSafeArea()
         }
-        .padding()
     }
 }
 
