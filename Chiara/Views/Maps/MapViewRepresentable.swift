@@ -10,6 +10,8 @@ import MapKit
 import CoreLocation
 
 struct MapViewRepresentable: UIViewRepresentable {
+    @EnvironmentObject var locationManager: LocationManager
+    
     @Binding var streetDrainList: [StreetDrain]
     @Binding var region: MKCoordinateRegion
     @Binding var selectedStreetDrain: StreetDrain?
@@ -49,7 +51,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func ImageFromCenterType() -> (String, CGSize, CGRect) {
-        return ("StreetDrainMapPin", CGSize(width: 37, height: 27), CGRect(x: 0, y: 0, width: 37, height: 27))
+        return ("StreetDrainMapPin", CGSize(width: 41, height: 31), CGRect(x: 0, y: 0, width: 41, height: 31))
     }
     
     class Coordinator: NSObject, MKMapViewDelegate, CLLocationManagerDelegate {
@@ -75,6 +77,7 @@ struct MapViewRepresentable: UIViewRepresentable {
             let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
             parent.region = region
             locationManager.stopUpdatingLocation()
+            
         }
         
         func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -126,6 +129,17 @@ struct MapViewRepresentable: UIViewRepresentable {
                 if let streetDrain = parent.streetDrainList.first(where: {$0.address == customAnnotation.title}) {
                     parent.selectedStreetDrain = streetDrain
                     parent.isSheetDisplaying = true
+                    
+                    // Update currentLocation and currentAddress using LocationManager
+                   let location = CLLocation(latitude: streetDrain.latitude, longitude: streetDrain.longitude)
+//                   parent.locationManager.convertLocationToAddress(location: location) { [weak self] address in
+//                       guard let self = self else { return }
+//                       DispatchQueue.main.async {
+//                           self.parent.locationManager.currentLocation = location
+//                           self.parent.locationManager.currentPlace = address ?? "Address not found"
+//                       }
+//                   }
+                    parent.locationManager.convertLocationToAddress(location: location)
                 }
                 
                 UIView.animate(withDuration: 0.3) {

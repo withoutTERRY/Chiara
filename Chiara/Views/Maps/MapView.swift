@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+    @EnvironmentObject var locationManager: LocationManager
+    
     @Binding var streetDrainList: [StreetDrain]
     
     @State private var region = MKCoordinateRegion(
@@ -17,32 +19,71 @@ struct MapView: View {
     
     @State private var selectedStreetDrain: StreetDrain?
     
-    @State private var selectedCleanHouse = true
-    @State private var selectedRecycleCenter = true
-    @State private var selectedGarbageRequest = true
-    
     @State private var isSheetDisplaying: Bool = false
     
+    @State private var currentSheetHeight: CGFloat = 0.05 // 초기 높이 설정
+        
+    let initialSheetHeight: CGFloat = 0.05 // 초기 높이 값 설정
+    let sheetHeightsArray = Array(stride(from: 0.4, through: 0.8, by: 0.001))
+    let sheetHeights = Set(stride(from: 0.4, through: 0.8, by: 0.001).map { PresentationDetent.fraction($0) })
+    
     var body: some View {
-        ZStack {
-            MapViewRepresentable(streetDrainList: $streetDrainList,
-                                 region: $region,
-                                 selectedStreetDrain: $selectedStreetDrain,
-                                 isSheetDisplaying: $isSheetDisplaying)
-            .edgesIgnoringSafeArea(.all)
-            .sheet(isPresented: $isSheetDisplaying) {
-                if #available(iOS 16.4, *) {
-                    StreetDrainSheetView()
-                        .presentationDetents([.large])
-                        .presentationCornerRadius(15)
-                } else {
-                    StreetDrainSheetView()
-                        .presentationDetents([.large])
+        GeometryReader { geo in
+            ZStack {
+                MapViewRepresentable(streetDrainList: $streetDrainList,
+                                     region: Binding(
+                                        get: {
+                                            MKCoordinateRegion(
+                                                center: locationManager.currentGeoPoint ?? CLLocationCoordinate2D(latitude: 33.4996213, longitude: 126.5311884),
+                                                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                                            )
+                                        },
+                                        set: { newRegion in
+                                            locationManager.mapView.setRegion(newRegion, animated: true)
+                                        }
+                                     ),
+                                     selectedStreetDrain: $selectedStreetDrain,
+                                     isSheetDisplaying: $isSheetDisplaying)
+                .edgesIgnoringSafeArea(.all)
+                .sheet(isPresented: $isSheetDisplaying, onDismiss: {
+                    // Sheet가 닫힐 때 HStack을 초기 상태로 복귀
+                    withAnimation {
+                        currentSheetHeight = initialSheetHeight
+                    }
+                }) {
+                    if #available(iOS 16.4, *) {
+                        StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
+                            .presentationDetents(sheetHeights,
+                                                 selection: Binding(get: {
+                                                        PresentationDetent.fraction(currentSheetHeight)
+                                                    },
+                                                    set: { newDetent in
+                                                        // 부드러운 애니메이션 추가
+                                                        withAnimation {
+                                                            if let fractionValue = sheetHeightsArray.first(where: {
+                                                                PresentationDetent.fraction($0) == newDetent
+                                                            }) {
+                                                                currentSheetHeight = fractionValue
+                                                            }
+                                                        }
+                                                    }
+                                                ))
+                            .presentationDragIndicator(.visible)
+                            .presentationCornerRadius(15)
+                            .onAppear {
+                                // Sheet가 나타날 때 초기 위치로 설정
+                                withAnimation {
+                                    currentSheetHeight = 0.6
+                                }
+                            }
+                    } else {
+                        StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
+                            .presentationDragIndicator(.visible)
+                            .presentationDetents([.medium])
+                    }
                 }
-            }
-            
-            // 화면 그리기
-            GeometryReader { geo in
+                
+                // 화면 그리기
                 VStack(spacing: 0) {
                     Spacer()
                     
@@ -68,6 +109,7 @@ struct MapView: View {
                                     .foregroundStyle(.white)
                             }
                             .padding(.all, 10)
+                        
                             .background {
                                 RoundedRectangle(cornerRadius: 90)
                                     .fill(.black)
@@ -93,7 +135,9 @@ struct MapView: View {
                         }
                     }
                 }
+                .padding(.bottom, geo.size.height * currentSheetHeight + 5) // sheetHeight에 따른 bottom padding 조정
                 .padding(.horizontal, 20)
+                .animation(.easeInOut, value: currentSheetHeight) // 애니메이션 적용
             }
         }
     }
