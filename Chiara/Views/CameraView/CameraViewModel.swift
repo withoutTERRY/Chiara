@@ -4,7 +4,7 @@
 //
 //  Created by Lee Sihyeong on 8/11/24.
 //
-
+import Combine
 import AVFoundation
 import SwiftUI
 
@@ -30,3 +30,5 @@ class CameraViewModel: ObservableObject {
         model.capturePhoto()
     }
 }
+
+

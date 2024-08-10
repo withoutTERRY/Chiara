@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CameraView: View {
-
     @ObservedObject var cameraViewModel: CameraViewModel
     @State var isShuttered: Bool = false
+    @State private var showModelProcessView: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -32,8 +32,7 @@ struct CameraView: View {
                         ZStack {
                             Circle()
                                 .frame(width: 67, height: 67)
-                            // TODO: Color change
-                                .foregroundStyle(.blue)
+                                .foregroundStyle(.accent)
                             Circle()
                                 .frame(width: 61, height: 61)
                                 .foregroundStyle(.black)
@@ -43,6 +42,13 @@ struct CameraView: View {
                         }
                     }
                     .padding(.bottom, 135 + 16)
+                    //.padding(.bottom, 55)
+                    
+                    Text("Take a photo of the street drain")
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.darkGray)
+                        .padding(.bottom, 250)
+                    
                 } else {
                     if let recentImage = cameraViewModel.model.recentImage {
                         Image(uiImage: recentImage)
@@ -58,8 +64,7 @@ struct CameraView: View {
                         ZStack {
                             Circle()
                                 .frame(width: 67, height: 67)
-                                // TODO: Color change
-                                .foregroundStyle(.blue)
+                                .foregroundStyle(.accent)
                             Circle()
                                 .frame(width: 61, height: 61)
                                 .foregroundStyle(.black)
@@ -71,10 +76,30 @@ struct CameraView: View {
                         }
                     }
                     .padding(.bottom, 135 + 16)
+                    
+                    Text("Go to next step")
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.darkGray)
+                        .padding(.bottom, 250)
+                    
+
+                    NavigationLink(
+                        destination: ModelProcessView(image: cameraViewModel.model.recentImage),
+                        isActive: $showModelProcessView
+                    ) {
+                        EmptyView()
+                    }
+                    
+                    
                 }
             }
             .navigationTitle("Upload")
             .ignoresSafeArea()
+            .navigationBarItems(trailing: Button("Next") {
+                if cameraViewModel.model.recentImage != nil {
+                    showModelProcessView = true
+                }
+            })
         }
     }
 }

@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		2A1D9DC216A3B0FEFFF0BB13 /* Pods_Chiara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; };
 		46046DDE2C67BAE600DB3AE8 /* DrainClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46046DDD2C67BAE600DB3AE8 /* DrainClassification.swift */; };
-		46046DE02C67BD4F00DB3AE8 /* StreetDrainCleanness 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46046DDF2C67BD4F00DB3AE8 /* StreetDrainCleanness 1.mlmodel */; };
 		46046DE22C67C2F100DB3AE8 /* ModelProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46046DE12C67C2F100DB3AE8 /* ModelProcessView.swift */; };
+		46046DEB2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46046DEA2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel */; };
+		46046DED2C67E79000DB3AE8 /* NewLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */; };
 		67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A1E2C6767CA001F1577 /* AppDelegate.swift */; };
 		67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A222C6768A9001F1577 /* StreetDrainManager.swift */; };
 		67C309F82C6754760084070F /* ChiaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C309F72C6754760084070F /* ChiaraApp.swift */; };
@@ -54,8 +55,9 @@
 /* Begin PBXFileReference section */
 		2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46046DDD2C67BAE600DB3AE8 /* DrainClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrainClassification.swift; sourceTree = "<group>"; };
-		46046DDF2C67BD4F00DB3AE8 /* StreetDrainCleanness 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "StreetDrainCleanness 1.mlmodel"; sourceTree = "<group>"; };
 		46046DE12C67C2F100DB3AE8 /* ModelProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProcessView.swift; sourceTree = "<group>"; };
+		46046DEA2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = StreetDrainCleanness_1.mlmodel; sourceTree = "<group>"; };
+		46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationView.swift; sourceTree = "<group>"; };
 		67680A1E2C6767CA001F1577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67680A222C6768A9001F1577 /* StreetDrainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrainManager.swift; sourceTree = "<group>"; };
 		67C309F42C6754760084070F /* Chiara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chiara.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,14 @@
 				46046DDD2C67BAE600DB3AE8 /* DrainClassification.swift */,
 			);
 			path = ImageClassification;
+			sourceTree = "<group>";
+		};
+		46046DE32C67C76300DB3AE8 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				46046DE12C67C2F100DB3AE8 /* ModelProcessView.swift */,
+			);
+			path = ModelView;
 			sourceTree = "<group>";
 		};
 		67C309EB2C6754760084070F = {
@@ -162,6 +172,10 @@
 				8CCCAD1C2C67D6B500A1B557 /* chiara.json */,
 				8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */,
 				46046DE12C67C2F100DB3AE8 /* ModelProcessView.swift */,
+				46046DE32C67C76300DB3AE8 /* ModelView */,
+				67C309F92C6754760084070F /* ContentView.swift */,
+				72B095102C67C35A00192F1A /* CameraView */,
+				46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,7 +183,7 @@
 		67C30A072C6754A20084070F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				46046DDF2C67BD4F00DB3AE8 /* StreetDrainCleanness 1.mlmodel */,
+				46046DEA2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel */,
 				67C309FD2C6754780084070F /* Preview Content */,
 				67C309FB2C6754780084070F /* Assets.xcassets */,
 			);
@@ -371,6 +385,7 @@
 				FB1050892C67D3940014097E /* CustomAnnotation.swift in Sources */,
 				46046DE02C67BD4F00DB3AE8 /* StreetDrainCleanness 1.mlmodel in Sources */,
 				46046DE22C67C2F100DB3AE8 /* ModelProcessView.swift in Sources */,
+				46046DEB2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel in Sources */,
 				67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */,
 				72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */,
 				72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */,
@@ -382,6 +397,7 @@
 				8CCCAD1F2C67D6F800A1B557 /* LottieView.swift in Sources */,
 				67C309FA2C6754760084070F /* ContentView.swift in Sources */,
 				FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */,
+				46046DED2C67E79000DB3AE8 /* NewLocationView.swift in Sources */,
 				67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */,
 				67C309F82C6754760084070F /* ChiaraApp.swift in Sources */,
 				46046DDE2C67BAE600DB3AE8 /* DrainClassification.swift in Sources */,
@@ -443,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -500,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -525,6 +541,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 권한을 허용해주세요.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 권한을 허용해주세요.";
+				DEVELOPMENT_TEAM = 5GCYZU3KDQ;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = Camera;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -563,6 +584,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 권한을 허용해주세요.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 권한을 허용해주세요.";
+				DEVELOPMENT_TEAM = 5GCYZU3KDQ;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = Camera;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
