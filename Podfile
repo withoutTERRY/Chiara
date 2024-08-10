@@ -6,7 +6,6 @@ target 'Chiara' do
   use_frameworks!
 
   pod 'Firebase/Database'
-  pod 'FirebaseDatabaseSwift'
 
   # Pods for Chiara
 
