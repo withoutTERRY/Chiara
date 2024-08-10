@@ -14,8 +14,8 @@ struct StreetDrain: Identifiable, Codable, Hashable {
     var address: String
     
     // 위도, 경도
-    var latitude: String
-    var longitude: String
+    var latitude: Double
+    var longitude: Double
     
     // 막혀 있는 쓰레기 종류
     var trashType: TrashType
