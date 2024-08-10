@@ -1,8 +1,8 @@
 //
-//  NewLocationView.swift
+//  SelectLocationView.swift
 //  Chiara
 //
-//  Created by 추서연 on 8/11/24.
+//  Created by 추서연, Eom Chanwoo on 8/11/24.
 //
 
 import SwiftUI

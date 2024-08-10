@@ -9,11 +9,7 @@
 /* Begin PBXBuildFile section */
 		46046DDE2C67BAE600DB3AE8 /* DrainClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46046DDD2C67BAE600DB3AE8 /* DrainClassification.swift */; };
 		46046DEB2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46046DEA2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel */; };
-		46046DED2C67E79000DB3AE8 /* NewLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */; };
-		4647CDAC2C67F112002C44AC /* CoreModelProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647CDAB2C67F112002C44AC /* CoreModelProcessView.swift */; };
 		46046DED2C67E79000DB3AE8 /* SelectLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46046DEC2C67E79000DB3AE8 /* SelectLocationView.swift */; };
-		4647CDAC2C67F112002C44AC /* ModelProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647CDAB2C67F112002C44AC /* ModelProcessView.swift */; };
-		4647CDB22C67F86B002C44AC /* CoreModelLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647CDB12C67F86B002C44AC /* CoreModelLoadingView.swift */; };
 		670BCA3C2C67F8990033C684 /* LocationMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670BCA3B2C67F8990033C684 /* LocationMapViewRepresentable.swift */; };
 		67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A1E2C6767CA001F1577 /* AppDelegate.swift */; };
 		67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A222C6768A9001F1577 /* StreetDrainManager.swift */; };
@@ -26,15 +22,11 @@
 		72B095122C67C38200192F1A /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095112C67C38200192F1A /* Camera.swift */; };
 		72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095132C67C39D00192F1A /* CameraPreviewView.swift */; };
 		72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095152C67C3CA00192F1A /* CameraViewModel.swift */; };
-		72D4CD2C2C6807D6009B4F54 /* CleanCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D4CD2B2C6807D6009B4F54 /* CleanCameraView.swift */; };
 		72FE83BF2C67F16100D0180C /* UploadSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE83BE2C67F16100D0180C /* UploadSuccessView.swift */; };
 		72FE83C72C67F1B500D0180C /* CleanSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE83C62C67F1B500D0180C /* CleanSuccessView.swift */; };
 		8CCCAD1B2C67D65800A1B557 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8CCCAD1A2C67D65800A1B557 /* Lottie */; };
-		8CCCAD1D2C67D6B500A1B557 /* chiara.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CCCAD1C2C67D6B500A1B557 /* chiara.json */; };
-		8CCCAD1F2C67D6F800A1B557 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */; };
 		8CCCAD2A2C67D8F000A1B557 /* Pods_Chiara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; };
 		8CCCAD2B2C67D8F000A1B557 /* Pods_Chiara.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FB1050812C67D06F0014097E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050802C67D06F0014097E /* SplashView.swift */; };
 		FB1050862C67D3940014097E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050822C67D3940014097E /* MapView.swift */; };
 		FB1050872C67D3940014097E /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050832C67D3940014097E /* MapViewRepresentable.swift */; };
 		FB1050882C67D3940014097E /* StreetDrainSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050842C67D3940014097E /* StreetDrainSheetView.swift */; };
@@ -42,8 +34,12 @@
 		FB10508B2C67DD1E0014097E /* RouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10508A2C67DD1E0014097E /* RouterManager.swift */; };
 		FB1050912C67F2890014097E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB1050902C67F2890014097E /* GoogleService-Info.plist */; };
 		FB1050952C680A860014097E /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050942C680A860014097E /* ButtonLabel.swift */; };
-		FB1050972C681C260014097E /* CoreModelLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050962C681C260014097E /* CoreModelLoadingView.swift */; };
-		FB1050992C681C630014097E /* CleanCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050982C681C630014097E /* CleanCameraView.swift */; };
+		FB1050992C681C630014097E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050982C681C630014097E /* CameraView.swift */; };
+		FB10509D2C681ED00014097E /* chiara.json in Resources */ = {isa = PBXBuildFile; fileRef = FB10509A2C681ED00014097E /* chiara.json */; };
+		FB10509E2C681ED00014097E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10509B2C681ED00014097E /* SplashView.swift */; };
+		FB10509F2C681ED00014097E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10509C2C681ED00014097E /* LottieView.swift */; };
+		FB1050A12C6820320014097E /* CleanCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050A02C6820320014097E /* CleanCameraView.swift */; };
+		FB1050A32C6820FF0014097E /* CoreModelProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050A22C6820FF0014097E /* CoreModelProgressView.swift */; };
 		FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C02C675C73008324F8 /* StreetDrain.swift */; };
 		FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C32C676140008324F8 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
@@ -66,11 +62,7 @@
 		2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46046DDD2C67BAE600DB3AE8 /* DrainClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrainClassification.swift; sourceTree = "<group>"; };
 		46046DEA2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = StreetDrainCleanness_1.mlmodel; sourceTree = "<group>"; };
-		46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationView.swift; sourceTree = "<group>"; };
-		4647CDAB2C67F112002C44AC /* CoreModelProcessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreModelProcessView.swift; sourceTree = "<group>"; };
 		46046DEC2C67E79000DB3AE8 /* SelectLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationView.swift; sourceTree = "<group>"; };
-		4647CDAB2C67F112002C44AC /* ModelProcessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelProcessView.swift; path = ModelView/ModelProcessView.swift; sourceTree = "<group>"; };
-		4647CDB12C67F86B002C44AC /* CoreModelLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModelLoadingView.swift; sourceTree = "<group>"; };
 		670BCA3B2C67F8990033C684 /* LocationMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewRepresentable.swift; sourceTree = "<group>"; };
 		67680A1E2C6767CA001F1577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67680A222C6768A9001F1577 /* StreetDrainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrainManager.swift; sourceTree = "<group>"; };
@@ -82,18 +74,13 @@
 		67C6F92A2C67FE1C008EA948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		67C6F92B2C68020D008EA948 /* SelectLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationMapView.swift; sourceTree = "<group>"; };
 		67C6F92D2C6818D8008EA948 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		72B0950E2C67C35600192F1A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		72B095112C67C38200192F1A /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		72B095132C67C39D00192F1A /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		72B095152C67C3CA00192F1A /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
-		72D4CD2B2C6807D6009B4F54 /* CleanCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanCameraView.swift; sourceTree = "<group>"; };
 		72FE83BE2C67F16100D0180C /* UploadSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSuccessView.swift; sourceTree = "<group>"; };
 		72FE83C62C67F1B500D0180C /* CleanSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanSuccessView.swift; sourceTree = "<group>"; };
-		8CCCAD1C2C67D6B500A1B557 /* chiara.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chiara.json; sourceTree = "<group>"; };
-		8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		9AD58A4BEA3641F1747BB8FE /* Pods-Chiara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.debug.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.debug.xcconfig"; sourceTree = "<group>"; };
 		C0724CBDB416C350DA45909E /* Pods-Chiara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.release.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.release.xcconfig"; sourceTree = "<group>"; };
-		FB1050802C67D06F0014097E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		FB1050822C67D3940014097E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = Chiara/Views/Maps/MapView.swift; sourceTree = SOURCE_ROOT; };
 		FB1050832C67D3940014097E /* MapViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewRepresentable.swift; path = Chiara/Views/Maps/MapViewRepresentable.swift; sourceTree = SOURCE_ROOT; };
 		FB1050842C67D3940014097E /* StreetDrainSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreetDrainSheetView.swift; path = Chiara/Views/Maps/StreetDrainSheetView.swift; sourceTree = SOURCE_ROOT; };
@@ -101,8 +88,12 @@
 		FB10508A2C67DD1E0014097E /* RouterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterManager.swift; sourceTree = "<group>"; };
 		FB1050902C67F2890014097E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB1050942C680A860014097E /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
-		FB1050962C681C260014097E /* CoreModelLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModelLoadingView.swift; sourceTree = "<group>"; };
-		FB1050982C681C630014097E /* CleanCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanCameraView.swift; sourceTree = "<group>"; };
+		FB1050982C681C630014097E /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		FB10509A2C681ED00014097E /* chiara.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chiara.json; sourceTree = "<group>"; };
+		FB10509B2C681ED00014097E /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		FB10509C2C681ED00014097E /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		FB1050A02C6820320014097E /* CleanCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanCameraView.swift; sourceTree = "<group>"; };
+		FB1050A22C6820FF0014097E /* CoreModelProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModelProgressView.swift; sourceTree = "<group>"; };
 		FB4A04C02C675C73008324F8 /* StreetDrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StreetDrain.swift; path = Chiara/Models/StreetDrain.swift; sourceTree = SOURCE_ROOT; };
 		FB4A04C32C676140008324F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,9 +122,7 @@
 		46046DE32C67C76300DB3AE8 /* CoreModelView */ = {
 			isa = PBXGroup;
 			children = (
-				4647CDAB2C67F112002C44AC /* CoreModelProcessView.swift */,
-				FB1050962C681C260014097E /* CoreModelLoadingView.swift */,
-				4647CDB12C67F86B002C44AC /* CoreModelLoadingView.swift */,
+				FB1050A22C6820FF0014097E /* CoreModelProgressView.swift */,
 			);
 			path = CoreModelView;
 			sourceTree = "<group>";
@@ -195,17 +184,9 @@
 			children = (
 				FB1050922C67F8920014097E /* SplashView */,
 				FB4A04CE2C679998008324F8 /* Maps */,
-				46046DE32C67C76300DB3AE8 /* CoreModelView */,
-				72B095102C67C35A00192F1A /* CameraView */,
-				46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */,
 				72FE83BE2C67F16100D0180C /* UploadSuccessView.swift */,
 				72FE83C62C67F1B500D0180C /* CleanSuccessView.swift */,
-				FB1050802C67D06F0014097E /* SplashView.swift */,
-				8CCCAD1C2C67D6B500A1B557 /* chiara.json */,
-				8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */,
-				4647CDAB2C67F112002C44AC /* ModelProcessView.swift */,
-				46046DE32C67C76300DB3AE8 /* ModelView */,
-				67C309F92C6754760084070F /* ContentView.swift */,
+				46046DE32C67C76300DB3AE8 /* CoreModelView */,
 				72B095102C67C35A00192F1A /* Cameras */,
 				46046DEC2C67E79000DB3AE8 /* SelectLocationView.swift */,
 				67C6F92B2C68020D008EA948 /* SelectLocationMapView.swift */,
@@ -235,12 +216,11 @@
 		72B095102C67C35A00192F1A /* Cameras */ = {
 			isa = PBXGroup;
 			children = (
-				72B0950E2C67C35600192F1A /* CameraView.swift */,
-				72D4CD2B2C6807D6009B4F54 /* CleanCameraView.swift */,
 				72B095112C67C38200192F1A /* Camera.swift */,
 				72B095132C67C39D00192F1A /* CameraPreviewView.swift */,
 				72B095152C67C3CA00192F1A /* CameraViewModel.swift */,
-				FB1050982C681C630014097E /* CleanCameraView.swift */,
+				FB1050982C681C630014097E /* CameraView.swift */,
+				FB1050A02C6820320014097E /* CleanCameraView.swift */,
 			);
 			path = Cameras;
 			sourceTree = "<group>";
@@ -265,9 +245,9 @@
 		FB1050922C67F8920014097E /* SplashView */ = {
 			isa = PBXGroup;
 			children = (
-				FB1050802C67D06F0014097E /* SplashView.swift */,
-				8CCCAD1C2C67D6B500A1B557 /* chiara.json */,
-				8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */,
+				FB10509A2C681ED00014097E /* chiara.json */,
+				FB10509B2C681ED00014097E /* SplashView.swift */,
+				FB10509C2C681ED00014097E /* LottieView.swift */,
 			);
 			path = SplashView;
 			sourceTree = "<group>";
@@ -379,10 +359,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				67C309FF2C6754780084070F /* Preview Assets.xcassets in Resources */,
+				FB10509D2C681ED00014097E /* chiara.json in Resources */,
 				FB1050912C67F2890014097E /* GoogleService-Info.plist in Resources */,
 				67C6F92E2C6818D8008EA948 /* GoogleService-Info.plist in Resources */,
 				67C309FC2C6754780084070F /* Assets.xcassets in Resources */,
-				8CCCAD1D2C67D6B500A1B557 /* chiara.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,31 +419,26 @@
 				72B095122C67C38200192F1A /* Camera.swift in Sources */,
 				FB1050862C67D3940014097E /* MapView.swift in Sources */,
 				FB1050892C67D3940014097E /* CustomAnnotation.swift in Sources */,
-				FB1050992C681C630014097E /* CleanCameraView.swift in Sources */,
+				FB1050992C681C630014097E /* CameraView.swift in Sources */,
 				46046DEB2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel in Sources */,
-				72D4CD2C2C6807D6009B4F54 /* CleanCameraView.swift in Sources */,
 				67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */,
 				72FE83BF2C67F16100D0180C /* UploadSuccessView.swift in Sources */,
 				72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */,
 				72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */,
-				FB1050972C681C260014097E /* CoreModelLoadingView.swift in Sources */,
-				72B0950F2C67C35600192F1A /* CameraView.swift in Sources */,
 				72FE83C72C67F1B500D0180C /* CleanSuccessView.swift in Sources */,
+				FB1050A32C6820FF0014097E /* CoreModelProgressView.swift in Sources */,
 				67C6F92C2C68020D008EA948 /* SelectLocationMapView.swift in Sources */,
 				67C6F9292C67FDC3008EA948 /* HereAnnotation.swift in Sources */,
 				FB1050872C67D3940014097E /* MapViewRepresentable.swift in Sources */,
-				FB1050812C67D06F0014097E /* SplashView.swift in Sources */,
+				FB10509E2C681ED00014097E /* SplashView.swift in Sources */,
 				FB10508B2C67DD1E0014097E /* RouterManager.swift in Sources */,
 				FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */,
-				8CCCAD1F2C67D6F800A1B557 /* LottieView.swift in Sources */,
-				4647CDAC2C67F112002C44AC /* CoreModelProcessView.swift in Sources */,
+				FB10509F2C681ED00014097E /* LottieView.swift in Sources */,
 				FB1050952C680A860014097E /* ButtonLabel.swift in Sources */,
 				670BCA3C2C67F8990033C684 /* LocationMapViewRepresentable.swift in Sources */,
-				67C309FA2C6754760084070F /* ContentView.swift in Sources */,
-				4647CDAC2C67F112002C44AC /* ModelProcessView.swift in Sources */,
 				FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */,
 				46046DED2C67E79000DB3AE8 /* SelectLocationView.swift in Sources */,
-				4647CDB22C67F86B002C44AC /* CoreModelLoadingView.swift in Sources */,
+				FB1050A12C6820320014097E /* CleanCameraView.swift in Sources */,
 				46046DED2C67E79000DB3AE8 /* SelectLocationView.swift in Sources */,
 				67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */,
 				67C309F82C6754760084070F /* ChiaraApp.swift in Sources */,
@@ -606,11 +581,6 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 권한을 허용해주세요.";
-				DEVELOPMENT_TEAM = 56LCM2KZR8;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Chiara/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = Camera;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 권한을 허용해주세요.";
@@ -647,11 +617,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chiara/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 2UWGKS2UN5;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 권한을 허용해주세요.";
-				DEVELOPMENT_TEAM = 56LCM2KZR8;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;

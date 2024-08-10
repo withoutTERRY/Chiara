@@ -1,5 +1,5 @@
 //
-//  CleanCameraView.swift
+//  CameraView.swift
 //  Chiara
 //
 //  Created by Lee Sihyeong on 8/11/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CleanCameraView: View {
+struct CameraView: View {
     @EnvironmentObject var cameraViewModel: CameraViewModel
     @EnvironmentObject var routerManager: RouterManager
     
@@ -15,7 +15,7 @@ struct CleanCameraView: View {
     
     var bottomText: String {
         if !isShuttered { // 셔터 누르기 전
-            return "Upload the photo after cleaning"
+            return "Check the state of the street drain!"
         } else if self.cameraViewModel.model.recentImage == nil { // 셔터는 눌렀으나 사진이 없는 경우
             return "please take a photo again!"
         } else { // 성공
@@ -51,7 +51,11 @@ struct CleanCameraView: View {
                         }
                     }
                     .padding(.bottom, 16)
-
+                    
+//                    Text("Take a photo of the street drain")
+//                        .fontWeight(.semibold)
+//                        .foregroundStyle(.darkGray)
+//                        .padding(.bottom, 250)
                     
                 }
                 // MARK: - 사진을 찍은 뒤
@@ -80,35 +84,40 @@ struct CleanCameraView: View {
                         }
                     }
                     .padding(.bottom, 16)
-                }
-                
-                Spacer().frame(height: 30)
-                
-                HStack {
-                    Spacer()
-                    Text("\(bottomText)")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.gray)
-                    Spacer()
+                    
+//                    Text("Go to next step")
+//                        .fontWeight(.semibold)
+//                        .foregroundStyle(.darkGray)
+//                        .padding(.bottom, 250)
                 }
             }
-            .padding(.horizontal, 20)
-            .navigationTitle("Upload")
-            .navigationBarItems(
-                trailing:  Button {
-                    if cameraViewModel.model.recentImage != nil {
-                       
-                    } else {
-                        
-                    }
-                } label: {
-                    Text("Done")
-                }
-            )
-            .onAppear {
-                cameraViewModel.configure()
+            
+            Spacer().frame(height: 30)
+            
+            HStack {
+                Spacer()
+                Text("\(bottomText)")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.gray)
+                Spacer()
             }
+        }
+        .padding(.horizontal, 20)
+        .navigationTitle("Upload")
+        .navigationBarItems(
+            trailing:  Button {
+                if let image = cameraViewModel.model.recentImage {
+                    routerManager.push(view: .coreModelProcessView(image: image))
+                } else {
+                    
+                }
+            } label: {
+                Text("Next")
+            }
+        )
+        .onAppear {
+            cameraViewModel.configure()
         }
     }
 }

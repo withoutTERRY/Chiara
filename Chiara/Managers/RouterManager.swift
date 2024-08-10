@@ -19,12 +19,16 @@ class RouterManager: ObservableObject {
         case .cameraView:
             CameraView()
             
+        case .cleanCameraView:
+            CleanCameraView()
+            
         case .coreModelProcessView(let image):
             CoreModelProcessView(image: image)
             
-        case .newLocationView:
-            NewLocationView()
+        case .selectLocationView:
+            SelectLocationView()
         }
+        
     }
     
     func push(view: ChiaraView){
@@ -45,6 +49,7 @@ enum ChiaraView: Hashable {
     case mapView
     case cameraView
     case coreModelProcessView(image: UIImage)
-    case newLocationView
+    case selectLocationView
+    case cleanCameraView
 }
 
