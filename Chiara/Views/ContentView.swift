@@ -14,7 +14,7 @@ struct ContentView: View {
                 Spacer()
                 HStack {
                     NavigationLink {
-                        CameraView(cameraViewModel: CameraViewModel())
+//                        CameraView()
                     } label: {
                         RoundedRectangle(cornerRadius: 90)
                             .frame(width: 170, height: 42)
