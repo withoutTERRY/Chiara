@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct ChiaraApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var locationManager = LocationManager()
     
     var body: some Scene {
