@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/poeticform/Desktop/WorkSpace/Chiara/Chiara/App/GoogleService-Info.plist">
+   </FileRef>
+   <FileRef
       location = "group:Chiara.xcodeproj">
    </FileRef>
    <FileRef
