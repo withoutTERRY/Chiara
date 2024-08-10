@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CleanSuccessView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Text("Succesfully Cleaned")
                 .font(.system(size: 24, weight: .semibold))
                 .padding(.horizontal, 80)
