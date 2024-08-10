@@ -16,19 +16,28 @@ class RouterManager: ObservableObject {
         case .mapView:
             MapView()
             
+            
+            
+        case .cleanCameraView(let streetDrain):
+            CleanCameraView(streetDrain: streetDrain)
+        case .coreModelCheckView(let streetDrain, let image):
+            CoreModelCheckView(streetDrain: streetDrain,
+                               image: image)
+        case .cleanSuccessView:
+            CleanSuccessView()
+            
+         
+            
         case .cameraView:
             CameraView()
-            
-        case .cleanCameraView:
-            CleanCameraView()
-            
         case .coreModelProcessView(let image):
             CoreModelProcessView(image: image)
-            
         case .selectLocationView:
             SelectLocationView()
+        case .uploadSuccessView:
+            UploadSuccessView()
+            
         }
-        
     }
     
     func push(view: ChiaraView){
@@ -47,9 +56,18 @@ class RouterManager: ObservableObject {
 
 enum ChiaraView: Hashable {
     case mapView
+    
+    case cleanCameraView(streetDrain: StreetDrain)
+    case coreModelCheckView(streetDrain: StreetDrain, image: UIImage)
+    case cleanSuccessView
+    
+    
+    
     case cameraView
     case coreModelProcessView(image: UIImage)
     case selectLocationView
-    case cleanCameraView
+    
+    case uploadSuccessView
+    
 }
 

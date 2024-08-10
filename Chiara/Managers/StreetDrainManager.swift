@@ -44,7 +44,9 @@ extension StreetDrainManager {
                 do {
                     let data = try JSONSerialization.data(withJSONObject: json)
                     let drain = try self.decoder.decode(StreetDrain.self, from: data)
-                    self.streetDrainList.append(drain)
+                    if !drain.isCleaned {
+                        self.streetDrainList.append(drain)
+                    }
                 } catch {
                     print("an error occurred", error)
                 }
@@ -63,8 +65,8 @@ extension StreetDrainManager {
                     let data = try JSONSerialization.data(withJSONObject: json)
                     let updatedDrain = try self.decoder.decode(StreetDrain.self, from: data)
 
-                    if let index = self.streetDrainList.firstIndex(where: { $0.id == updatedDrain.id }) {
-                        self.streetDrainList[index] = updatedDrain
+                    if let index = self.streetDrainList.firstIndex(where: { $0.id == updatedDrain.id }), !updatedDrain.isCleaned {
+                        self.streetDrainList.remove(at: index)
                     }
                 } catch {
                     print("an error occurred", error)

@@ -34,7 +34,11 @@ struct StreetDrainSheetView: View {
                 Spacer()
                 
                 Button {
-                    routerManager.push(view: .cleanCameraView)
+                    isSheetDisplaying = false
+                    if let streetDrain = streetDrain {
+                        routerManager.push(view: .cleanCameraView(streetDrain: streetDrain))
+                    }
+                    
                 } label: {
                     Text("Clean It Up")
                         .font(.title2)

@@ -105,7 +105,7 @@ struct MapView: View {
                 // Sheet가 닫힐 때 HStack을 초기 상태로 복귀
                 currentSheetHeight = initialSheetHeight
             }) {
-                StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
+                StreetDrainSheetView(streetDrain: selectedStreetDrain, isSheetDisplaying: $isSheetDisplaying)
                     .presentationDetents(sheetHeights,
                                      selection: Binding(
                                         get: {

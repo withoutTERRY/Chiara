@@ -40,6 +40,7 @@
 		FB10509F2C681ED00014097E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10509C2C681ED00014097E /* LottieView.swift */; };
 		FB1050A12C6820320014097E /* CleanCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050A02C6820320014097E /* CleanCameraView.swift */; };
 		FB1050A32C6820FF0014097E /* CoreModelProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050A22C6820FF0014097E /* CoreModelProgressView.swift */; };
+		FB1050A52C6824860014097E /* CoreModelCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050A42C6824860014097E /* CoreModelCheckView.swift */; };
 		FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C02C675C73008324F8 /* StreetDrain.swift */; };
 		FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C32C676140008324F8 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		FB10509C2C681ED00014097E /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		FB1050A02C6820320014097E /* CleanCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanCameraView.swift; sourceTree = "<group>"; };
 		FB1050A22C6820FF0014097E /* CoreModelProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModelProgressView.swift; sourceTree = "<group>"; };
+		FB1050A42C6824860014097E /* CoreModelCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModelCheckView.swift; sourceTree = "<group>"; };
 		FB4A04C02C675C73008324F8 /* StreetDrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StreetDrain.swift; path = Chiara/Models/StreetDrain.swift; sourceTree = SOURCE_ROOT; };
 		FB4A04C32C676140008324F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FB1050A22C6820FF0014097E /* CoreModelProgressView.swift */,
+				FB1050A42C6824860014097E /* CoreModelCheckView.swift */,
 			);
 			path = CoreModelView;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */,
 				72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */,
 				72FE83C72C67F1B500D0180C /* CleanSuccessView.swift in Sources */,
+				FB1050A52C6824860014097E /* CoreModelCheckView.swift in Sources */,
 				FB1050A32C6820FF0014097E /* CoreModelProgressView.swift in Sources */,
 				67C6F92C2C68020D008EA948 /* SelectLocationMapView.swift in Sources */,
 				67C6F9292C67FDC3008EA948 /* HereAnnotation.swift in Sources */,

@@ -2,7 +2,7 @@
 //  CleanCameraView.swift
 //  Chiara
 //
-//  Created by Lee Sihyeong on 8/11/24.
+//  Created by Lee Sihyeong, sseungwonnn on 8/11/24.
 //
 
 import SwiftUI
@@ -12,6 +12,8 @@ struct CleanCameraView: View {
     @EnvironmentObject var routerManager: RouterManager
     
     @State var isShuttered: Bool = false
+    
+    let streetDrain: StreetDrain
     
     var bottomText: String {
         if !isShuttered { // 셔터 누르기 전
@@ -93,23 +95,22 @@ struct CleanCameraView: View {
                     Spacer()
                 }
             }
-            .padding(.horizontal, 20)
-            .navigationTitle("Check")
-            .navigationBarItems(
-                trailing:  Button {
-                    if let image = cameraViewModel.model.recentImage {
-                        // TODO: router 추가
-                        //                        routerManager.push(view: )
-                    } else {
-                        
-                    }
-                } label: {
-                    Text("Done")
+        }
+        .padding(.horizontal, 20)
+        .navigationTitle("Check")
+        .navigationBarItems(
+            trailing: Button {
+                if let image = cameraViewModel.model.recentImage {
+                    routerManager.push(view: .coreModelCheckView(streetDrain: streetDrain, image: image))
+                } else {
+                    
                 }
-            )
-            .onAppear {
-                cameraViewModel.configure()
+            } label: {
+                Text("Done")
             }
+        )
+        .onAppear {
+            cameraViewModel.configure()
         }
     }
 }
