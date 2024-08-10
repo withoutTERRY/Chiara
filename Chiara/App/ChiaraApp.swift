@@ -16,7 +16,7 @@ struct ChiaraApp: App {
     @StateObject private var routerManager = RouterManager()
     
     @State private var isLoading: Bool = false
-    @State private var showSplashView: Bool = false
+    @State private var showSplashView: Bool = true
     
     var body: some Scene {
         WindowGroup {

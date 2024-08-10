@@ -16,7 +16,7 @@
 #import "FIRLoggerLevel.h"
 #import "FIROptions.h"
 #import "FIRVersion.h"
-#import "FIRTimestamp.h"
+//#import "FIRTimestamp.h"
 
 FOUNDATION_EXPORT double FirebaseCoreVersionNumber;
 FOUNDATION_EXPORT const unsigned char FirebaseCoreVersionString[];

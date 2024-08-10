@@ -20,18 +20,17 @@
 		8CCCAD1B2C67D65800A1B557 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8CCCAD1A2C67D65800A1B557 /* Lottie */; };
 		8CCCAD1D2C67D6B500A1B557 /* chiara.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CCCAD1C2C67D6B500A1B557 /* chiara.json */; };
 		8CCCAD1F2C67D6F800A1B557 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */; };
-		8CCCAD292C67D7F300A1B557 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CCCAD282C67D7F300A1B557 /* GoogleService-Info.plist */; };
 		8CCCAD2A2C67D8F000A1B557 /* Pods_Chiara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; };
-		8CCCAD2B2C67D8F000A1B557 /* Pods_Chiara.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8CCCAD2B2C67D8F000A1B557 /* Pods_Chiara.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2991DA54440F2FB04014ED9B /* Pods_Chiara.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB1050812C67D06F0014097E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050802C67D06F0014097E /* SplashView.swift */; };
 		FB1050862C67D3940014097E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050822C67D3940014097E /* MapView.swift */; };
 		FB1050872C67D3940014097E /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050832C67D3940014097E /* MapViewRepresentable.swift */; };
 		FB1050882C67D3940014097E /* StreetDrainSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050842C67D3940014097E /* StreetDrainSheetView.swift */; };
 		FB1050892C67D3940014097E /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050852C67D3940014097E /* CustomAnnotation.swift */; };
 		FB10508B2C67DD1E0014097E /* RouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10508A2C67DD1E0014097E /* RouterManager.swift */; };
+		FB10508D2C67EE310014097E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB10508C2C67EE310014097E /* GoogleService-Info.plist */; };
 		FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C02C675C73008324F8 /* StreetDrain.swift */; };
 		FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C32C676140008324F8 /* LocationManager.swift */; };
-		FB4A04D02C679B1F008324F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB4A04CF2C679B1F008324F8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,7 +62,6 @@
 		72B095152C67C3CA00192F1A /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		8CCCAD1C2C67D6B500A1B557 /* chiara.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chiara.json; sourceTree = "<group>"; };
 		8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		8CCCAD282C67D7F300A1B557 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9AD58A4BEA3641F1747BB8FE /* Pods-Chiara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.debug.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.debug.xcconfig"; sourceTree = "<group>"; };
 		C0724CBDB416C350DA45909E /* Pods-Chiara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.release.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.release.xcconfig"; sourceTree = "<group>"; };
 		FB1050802C67D06F0014097E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -72,9 +70,9 @@
 		FB1050842C67D3940014097E /* StreetDrainSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreetDrainSheetView.swift; path = Chiara/Views/Maps/StreetDrainSheetView.swift; sourceTree = SOURCE_ROOT; };
 		FB1050852C67D3940014097E /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAnnotation.swift; path = Chiara/Views/Maps/CustomAnnotation.swift; sourceTree = SOURCE_ROOT; };
 		FB10508A2C67DD1E0014097E /* RouterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterManager.swift; sourceTree = "<group>"; };
+		FB10508C2C67EE310014097E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FB4A04C02C675C73008324F8 /* StreetDrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StreetDrain.swift; path = Chiara/Models/StreetDrain.swift; sourceTree = SOURCE_ROOT; };
 		FB4A04C32C676140008324F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		FB4A04CF2C679B1F008324F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,10 +130,9 @@
 		67C30A052C6754940084070F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				8CCCAD282C67D7F300A1B557 /* GoogleService-Info.plist */,
 				67680A1E2C6767CA001F1577 /* AppDelegate.swift */,
-				FB4A04CF2C679B1F008324F8 /* GoogleService-Info.plist */,
 				67C309F72C6754760084070F /* ChiaraApp.swift */,
+				FB10508C2C67EE310014097E /* GoogleService-Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -295,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67C309FF2C6754780084070F /* Preview Assets.xcassets in Resources */,
-				8CCCAD292C67D7F300A1B557 /* GoogleService-Info.plist in Resources */,
+				FB10508D2C67EE310014097E /* GoogleService-Info.plist in Resources */,
 				67C309FC2C6754780084070F /* Assets.xcassets in Resources */,
 				8CCCAD1D2C67D6B500A1B557 /* chiara.json in Resources */,
 			);
@@ -501,7 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chiara/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = N8UAK95HX5;
+				DEVELOPMENT_TEAM = 2UWGKS2UN5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -539,7 +536,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chiara/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = N8UAK95HX5;
+				DEVELOPMENT_TEAM = 2UWGKS2UN5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
