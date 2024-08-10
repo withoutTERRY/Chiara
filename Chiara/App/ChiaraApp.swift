@@ -14,8 +14,6 @@ struct ChiaraApp: App {
     @StateObject private var locationManager = LocationManager()
     @StateObject private var streetDrainManager = StreetDrainManager.shared
     
-//    @State private var streetDrainList: [StreetDrain] = [StreetDrain(id: UUID().uuidString,
-//                                                                     address: "77, Cheongam-ro, Nam-gu, Pohang-si, Gyeongsangbuk-do, Republic of Korea", latitude: 36.01403209698482, longitude: 129.32589456302887, trashType: .cigarette, isCleaned: false)]
     var body: some Scene {
         WindowGroup {
             MapView()
@@ -24,6 +22,8 @@ struct ChiaraApp: App {
                 .onAppear {
                     // 위치 정보 접근 권한 요청을 합니다.
                     locationManager.requestLocation()
+                    
+                    // 실시간 배수구 정보를 받아옵니다.
                     streetDrainManager.listenToRealtimeDatabase()
                 }
         }

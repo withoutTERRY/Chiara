@@ -52,7 +52,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func ImageFromCenterType() -> (String, CGSize, CGRect) {
-        return ("StreetDrainMapPin", CGSize(width: 41, height: 31), CGRect(x: 0, y: 0, width: 41, height: 31))
+        return ("StreetDrainMapPin", CGSize(width: 35, height: 49), CGRect(x: 0, y: 0, width: 35, height: 49))
     }
     
     class Coordinator: NSObject, MKMapViewDelegate, CLLocationManagerDelegate {
