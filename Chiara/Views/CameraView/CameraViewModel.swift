@@ -9,10 +9,9 @@ import AVFoundation
 import SwiftUI
 
 class CameraViewModel: ObservableObject {
-    private let model: Camera
-    private let session: AVCaptureSession
+    let model: Camera
+    let session: AVCaptureSession
     let cameraPreview: AnyView
-    var photoData: Data = Data()
     
     init() {
         model = Camera()
@@ -27,19 +26,7 @@ class CameraViewModel: ObservableObject {
         model.requestAndCheckPermissions()
     }
     
-    func switchFlash() {
-        isFlashOn.toggle()
-    }
-    
-    func switchSilent() {
-        isSilentModeOn.toggle()
-    }
-    
     func capturePhoto() {
         model.capturePhoto()
-    }
-    
-    func changeCamera() {
-        
     }
 }

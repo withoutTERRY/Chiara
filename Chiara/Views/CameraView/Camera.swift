@@ -12,9 +12,8 @@ class Camera: NSObject, ObservableObject {
     var session = AVCaptureSession()
     var videoDeviceInput: AVCaptureDeviceInput!
     let output = AVCapturePhotoOutput()
-    @Published var recentImage: UIImage?
-    @Published var isCameraBusy = false
     
+    @Published var recentImage: UIImage?
     var photoData = Data(count: 0)
     
     // 카메라 셋업 과정을 담당하는 함수, positio
@@ -79,7 +78,6 @@ class Camera: NSObject, ObservableObject {
 
 extension Camera: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, willBeginCaptureFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
-        self.isCameraBusy = true
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, willCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
@@ -92,6 +90,5 @@ extension Camera: AVCapturePhotoCaptureDelegate {
         guard let imageData = photo.fileDataRepresentation() else { return }
         self.photoData = imageData
         self.recentImage = UIImage(data: imageData)
-        self.isCameraBusy = false
     }
 }
