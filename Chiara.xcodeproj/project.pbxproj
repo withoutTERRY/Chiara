@@ -10,7 +10,6 @@
 		46046DDE2C67BAE600DB3AE8 /* DrainClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46046DDD2C67BAE600DB3AE8 /* DrainClassification.swift */; };
 		46046DEB2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46046DEA2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel */; };
 		46046DED2C67E79000DB3AE8 /* NewLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */; };
-		4647CDAA2C67F0E8002C44AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4647CDA92C67F0E8002C44AC /* GoogleService-Info.plist */; };
 		4647CDAC2C67F112002C44AC /* ModelProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647CDAB2C67F112002C44AC /* ModelProcessView.swift */; };
 		67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A1E2C6767CA001F1577 /* AppDelegate.swift */; };
 		67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67680A222C6768A9001F1577 /* StreetDrainManager.swift */; };
@@ -18,10 +17,12 @@
 		67C309FA2C6754760084070F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C309F92C6754760084070F /* ContentView.swift */; };
 		67C309FC2C6754780084070F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67C309FB2C6754780084070F /* Assets.xcassets */; };
 		67C309FF2C6754780084070F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67C309FE2C6754780084070F /* Preview Assets.xcassets */; };
-		72B0950F2C67C35600192F1A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B0950E2C67C35600192F1A /* CameraView.swift */; };
+		72B0950F2C67C35600192F1A /* UploadCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B0950E2C67C35600192F1A /* UploadCameraView.swift */; };
 		72B095122C67C38200192F1A /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095112C67C38200192F1A /* Camera.swift */; };
 		72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095132C67C39D00192F1A /* CameraPreviewView.swift */; };
 		72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B095152C67C3CA00192F1A /* CameraViewModel.swift */; };
+		72B6A3C52C680486007348E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72B6A3C42C680486007348E8 /* GoogleService-Info.plist */; };
+		72D4CD2C2C6807D6009B4F54 /* CleanCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D4CD2B2C6807D6009B4F54 /* CleanCameraView.swift */; };
 		8CCCAD1B2C67D65800A1B557 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8CCCAD1A2C67D65800A1B557 /* Lottie */; };
 		8CCCAD1D2C67D6B500A1B557 /* chiara.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CCCAD1C2C67D6B500A1B557 /* chiara.json */; };
 		8CCCAD1F2C67D6F800A1B557 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */; };
@@ -56,7 +57,6 @@
 		46046DDD2C67BAE600DB3AE8 /* DrainClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrainClassification.swift; sourceTree = "<group>"; };
 		46046DEA2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = StreetDrainCleanness_1.mlmodel; sourceTree = "<group>"; };
 		46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationView.swift; sourceTree = "<group>"; };
-		4647CDA92C67F0E8002C44AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4647CDAB2C67F112002C44AC /* ModelProcessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelProcessView.swift; path = ModelView/ModelProcessView.swift; sourceTree = "<group>"; };
 		67680A1E2C6767CA001F1577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67680A222C6768A9001F1577 /* StreetDrainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrainManager.swift; sourceTree = "<group>"; };
@@ -65,10 +65,12 @@
 		67C309F92C6754760084070F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		67C309FB2C6754780084070F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67C309FE2C6754780084070F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		72B0950E2C67C35600192F1A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		72B0950E2C67C35600192F1A /* UploadCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCameraView.swift; sourceTree = "<group>"; };
 		72B095112C67C38200192F1A /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		72B095132C67C39D00192F1A /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		72B095152C67C3CA00192F1A /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		72B6A3C42C680486007348E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		72D4CD2B2C6807D6009B4F54 /* CleanCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanCameraView.swift; sourceTree = "<group>"; };
 		8CCCAD1C2C67D6B500A1B557 /* chiara.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chiara.json; sourceTree = "<group>"; };
 		8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		9AD58A4BEA3641F1747BB8FE /* Pods-Chiara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiara.debug.xcconfig"; path = "Target Support Files/Pods-Chiara/Pods-Chiara.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,7 +157,7 @@
 			children = (
 				67680A1E2C6767CA001F1577 /* AppDelegate.swift */,
 				67C309F72C6754760084070F /* ChiaraApp.swift */,
-				4647CDA92C67F0E8002C44AC /* GoogleService-Info.plist */,
+				72B6A3C42C680486007348E8 /* GoogleService-Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -170,7 +172,7 @@
 				4647CDAB2C67F112002C44AC /* ModelProcessView.swift */,
 				46046DE32C67C76300DB3AE8 /* ModelView */,
 				67C309F92C6754760084070F /* ContentView.swift */,
-				72B095102C67C35A00192F1A /* CameraView */,
+				72B095102C67C35A00192F1A /* Cameras */,
 				46046DEC2C67E79000DB3AE8 /* NewLocationView.swift */,
 			);
 			path = Views;
@@ -193,15 +195,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		72B095102C67C35A00192F1A /* CameraView */ = {
+		72B095102C67C35A00192F1A /* Cameras */ = {
 			isa = PBXGroup;
 			children = (
-				72B0950E2C67C35600192F1A /* CameraView.swift */,
+				72B0950E2C67C35600192F1A /* UploadCameraView.swift */,
+				72D4CD2B2C6807D6009B4F54 /* CleanCameraView.swift */,
 				72B095112C67C38200192F1A /* Camera.swift */,
 				72B095132C67C39D00192F1A /* CameraPreviewView.swift */,
 				72B095152C67C3CA00192F1A /* CameraViewModel.swift */,
 			);
-			path = CameraView;
+			path = Cameras;
 			sourceTree = "<group>";
 		};
 		77DBCBC6AF36BCB037062DAD /* Pods */ = {
@@ -320,7 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67C309FF2C6754780084070F /* Preview Assets.xcassets in Resources */,
-				4647CDAA2C67F0E8002C44AC /* GoogleService-Info.plist in Resources */,
+				72B6A3C52C680486007348E8 /* GoogleService-Info.plist in Resources */,
 				67C309FC2C6754780084070F /* Assets.xcassets in Resources */,
 				8CCCAD1D2C67D6B500A1B557 /* chiara.json in Resources */,
 			);
@@ -380,10 +383,11 @@
 				FB1050862C67D3940014097E /* MapView.swift in Sources */,
 				FB1050892C67D3940014097E /* CustomAnnotation.swift in Sources */,
 				46046DEB2C67D50D00DB3AE8 /* StreetDrainCleanness_1.mlmodel in Sources */,
+				72D4CD2C2C6807D6009B4F54 /* CleanCameraView.swift in Sources */,
 				67680A232C6768A9001F1577 /* StreetDrainManager.swift in Sources */,
 				72B095142C67C39D00192F1A /* CameraPreviewView.swift in Sources */,
 				72B095162C67C3CA00192F1A /* CameraViewModel.swift in Sources */,
-				72B0950F2C67C35600192F1A /* CameraView.swift in Sources */,
+				72B0950F2C67C35600192F1A /* UploadCameraView.swift in Sources */,
 				FB1050872C67D3940014097E /* MapViewRepresentable.swift in Sources */,
 				FB1050812C67D06F0014097E /* SplashView.swift in Sources */,
 				FB10508B2C67DD1E0014097E /* RouterManager.swift in Sources */,
@@ -530,7 +534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chiara/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 5GCYZU3KDQ;
+				DEVELOPMENT_TEAM = 7FD4JN9V32;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -568,7 +572,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chiara/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 5GCYZU3KDQ;
+				DEVELOPMENT_TEAM = 7FD4JN9V32;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
