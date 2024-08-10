@@ -53,7 +53,7 @@ struct ModelProcessView: View {
                         }
                         
                         NavigationLink(
-                            destination: NewLocationView(),
+                            destination: SelectLocationView(),
                             isActive: $isNavigating
                         ) {
                             Button(buttonTitle) {
