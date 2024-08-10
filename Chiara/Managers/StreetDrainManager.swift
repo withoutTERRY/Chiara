@@ -65,7 +65,7 @@ extension StreetDrainManager {
                     let data = try JSONSerialization.data(withJSONObject: json)
                     let updatedDrain = try self.decoder.decode(StreetDrain.self, from: data)
 
-                    if let index = self.streetDrainList.firstIndex(where: { $0.id == updatedDrain.id }), !updatedDrain.isCleaned {
+                    if let index = self.streetDrainList.firstIndex(where: { $0.id == updatedDrain.id }), updatedDrain.isCleaned {
                         self.streetDrainList.remove(at: index)
                     }
                 } catch {

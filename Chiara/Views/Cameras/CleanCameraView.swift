@@ -83,17 +83,16 @@ struct CleanCameraView: View {
                     }
                     .padding(.bottom, 16)
                 }
-                
-                Spacer().frame(height: 30)
-                
-                HStack {
-                    Spacer()
-                    Text("\(bottomText)")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.gray)
-                    Spacer()
-                }
+            }
+            Spacer().frame(height: 30)
+            
+            HStack {
+                Spacer()
+                Text("\(bottomText)")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.gray)
+                Spacer()
             }
         }
         .padding(.horizontal, 20)
