@@ -22,6 +22,8 @@ class RouterManager: ObservableObject {
         case .coreModelProcessView(let image):
             CoreModelProcessView(image: image)
             
+        case .newLocationView:
+            NewLocationView()
         }
     }
     
@@ -42,6 +44,7 @@ class RouterManager: ObservableObject {
 enum ChiaraView: Hashable {
     case mapView
     case cameraView
-    case coreModelProcessView(image: UIImage?)
+    case coreModelProcessView(image: UIImage)
+    case newLocationView
 }
 

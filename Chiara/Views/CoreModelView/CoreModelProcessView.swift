@@ -2,7 +2,7 @@
 //  CoreModelProcessView.swift
 //  Chiara
 //
-//  Created by 추서연 on 8/11/24.
+//  Created by 추서연, sseungwonnn on 8/11/24.
 
 
 
@@ -11,13 +11,48 @@ import CoreML
 import Vision
 
 struct CoreModelProcessView: View {
-    let image: UIImage?
-    @State private var result: AnyView = AnyView(Text(""))
-    @State private var buttonTitle: String = "Process Image"
-    @State private var isButtonDisabled: Bool = false
-    @State private var isNavigating: Bool = false
-    @State private var showAlert: Bool = false // To handle navigation for invalid state
+    @EnvironmentObject var routerManager: RouterManager
+    
+    let image: UIImage
+    
+    @State private var showAlert: Bool = false
+    
+    @State private var imageStatus: ImageStatus = .notYet
+    
+    enum ImageStatus {
+        case notYet
+        case inProgress
+        case cigarret
+        case leaf
+        case clean
+        case error
+    }
 
+    var isImageProcessingDone: Bool {
+        imageStatus == .clean
+        || imageStatus == .leaf
+        || imageStatus == .cigarret
+        || imageStatus == .error
+    }
+    
+    var buttonText: String {
+        switch imageStatus {
+        case .notYet:
+            "Process Image"
+        case .inProgress:
+            "In progress"
+        case .cigarret:
+            "Add To Map"
+        case .leaf:
+            "Add To Map"
+        case .clean:
+            "Finish"
+        case .error:
+            "Try Again"
+        }
+    }
+    
+    // Image Classification 진행
     private var model: VNCoreMLModel? {
         // Ensure the model file name matches the name in your project
         guard let modelURL = Bundle.main.url(forResource: "StreetDrainCleanness_1", withExtension: "mlmodelc") else {
@@ -35,87 +70,170 @@ struct CoreModelProcessView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                VStack {
-                    if let image = image {
-                        ZStack(alignment: .bottom) {
-                            Image(uiImage: image)
-                                .resizable()
-                                .scaledToFit()
-                                .clipShape(RoundedRectangle(cornerRadius: 40))
-                                .padding(.horizontal, 20)
-                                                            .padding(.vertical, 30)
-                            
-                            result
-                                .padding()
-                            
-                        }
-                        
-                        NavigationLink(
-                            destination: NewLocationView(),
-                            isActive: $isNavigating
-                        ) {
-                            Button(buttonTitle) {
-                                if buttonTitle == "Process Image" {
-                                    processImage(image)
-                                } else {
-                                    if !isButtonDisabled {
-                                        isNavigating = true
-                                    } else {
-                                        showAlert = true
-                                    }
-                                }
-                            }
-                            .padding(15)
-                            .background(isButtonDisabled ? Color.gray : Color.black)
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .alert(isPresented: $showAlert) {
-                                Alert(
-                                    title: Text("Action Not Allowed"),
-                                    message: Text("The drain is clean and cannot be added to the map."),
-                                    dismissButton: .default(Text("OK"))
-                                )
-                            }
-                        }
-                    } else {
-                        Text("No Image Available")
-                            .font(.system(size: 20, weight: .semibold))
-                            .padding()
-                    }
+        VStack {
+            Spacer().frame(height: 10)
+            
+            ZStack(alignment: .bottom) {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 40))
+                
+                if isImageProcessingDone {
+                    resultView()
+                        .padding(.horizontal, 30)
+                        .padding(.bottom, 40)
                 }
-
             }
+            
+            Button {
+                switch imageStatus {
+                case .notYet:
+                    self.processImage(image)
+                    self.imageStatus = .inProgress
+                case .inProgress:
+                    self.imageStatus = .inProgress
+                case .cigarret:
+                    routerManager.push(view: .newLocationView)
+                case .leaf:
+                    routerManager.push(view: .newLocationView)
+                case .clean:
+                    self.showAlert = true
+                case .error:
+                    routerManager.pop()
+                }
+            } label: {
+                ButtonLabel(buttonText: buttonText, isDisabled: false)
+            }
+        } // VStack
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Finish"),
+                message: Text("The drain is clean and cannot be added to the map."),
+                primaryButton: .default(Text("Go to Map")) {
+                    routerManager.backToMap()
+                },
+                secondaryButton: .cancel()
+            )       
         }
         .navigationTitle("Process Image")
-       .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+
+fileprivate extension CoreModelProcessView {
+    @ViewBuilder
+    private func resultView() -> some View {
+        var resultText: String {
+            switch imageStatus {
+            case .notYet, .inProgress, .error:
+                "Try again"
+            
+            case .cigarret, .leaf:
+                "The drain is clogged!"
+                
+            case .clean:
+                "The drain is already clean"
+            }
+        }
+        
+        var resultEmojiName: String {
+            switch imageStatus {
+            case .notYet, .inProgress, .error:
+                "exclamationmark.triangle"
+            case .cigarret:
+                "pencil.fill"
+            case .leaf:
+                "leaf.fill"
+            case .clean:
+                "hand.thumbsup.fill"
+            }
+        }
+        
+        var resultEmojiColor: Color {
+            switch imageStatus {
+            case .notYet, .inProgress, .error:
+                    .yellow
+            case .cigarret:
+                    .red
+            case .leaf:
+                    .green
+            case .clean:
+                    .accent
+            }
+        }
+        
+        var resultDescription: String {
+            switch imageStatus {
+            case .notYet, .inProgress, .error:
+                ""
+            case .cigarret:
+                "cigarret"
+            case .leaf:
+                "leaves"
+            case .clean:
+                ""
+            }
+        }
+        
+        HStack {
+            Spacer()
+            
+            VStack(alignment: .center, spacing: 14) {
+                Text("\(resultText)")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.black)
+                
+                HStack(alignment: .center, spacing: 10) {
+                    Image(systemName: resultEmojiName)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(resultEmojiColor)
+                    
+                    Text("\(resultDescription)")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .foregroundStyle(.darkGray)
+                }
+                
+            }
+            Spacer()
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 22)
+        .background {
+            RoundedRectangle(cornerRadius: 30)
+                .fill(.white)
+        }
+        
     }
     
     private func processImage(_ image: UIImage) {
         guard let model = model else {
-            result = AnyView(Text("Model is not available.").font(.system(size: 20, weight: .semibold)))
+            self.imageStatus = .error
+            
             return
         }
         
         // Convert UIImage to CIImage
         guard let ciImage = CIImage(image: image) else {
-            result = AnyView(Text("Failed to convert image.").font(.system(size: 20, weight: .semibold)))
+            self.imageStatus = .error
+            
             return
         }
         
         let request = VNCoreMLRequest(model: model) { request, error in
             if let error = error {
-                DispatchQueue.main.async {
-                    result = AnyView(Text("Error: \(error.localizedDescription)").font(.system(size: 20, weight: .semibold)))
-                }
+                self.imageStatus = .error
+                
                 return
             }
             
             guard let results = request.results as? [VNClassificationObservation], let topResult = results.first else {
-                DispatchQueue.main.async {
-                    result = AnyView(Text("No results found.").font(.system(size: 20, weight: .semibold)))
-                }
+                
+                self.imageStatus = .error
                 return
             }
             
@@ -123,84 +241,16 @@ struct CoreModelProcessView: View {
             DispatchQueue.main.async {
                 switch classification {
                 case "CleanDrain":
-                    result = AnyView(
-                        ZStack {
-                            VStack {
-                                Text("The drain is already clean")
-                                    .font(.system(size: 20, weight: .semibold))
-                                    .padding(.bottom, 15)
-                                HStack {
-                                    Image(systemName: "hand.thumbsup.fill")
-                                        .foregroundColor(.accentColor)
-                                    Text("Clean Drain")
-                                        .font(.system(size: 20, weight: .semibold))
-                                        .foregroundColor(.darkGray)
-                                }
-                                .offset(y: -10)
-                            }
-                            .padding(.horizontal, 40)
-                            .padding(15)
-                            .background(Color.white.opacity(0.7))
-                            .clipShape(RoundedRectangle(cornerRadius: 30))
-                            .padding(.bottom, 30)
-                        }
-                    )
-                    buttonTitle = "Add to Map"
-                    isButtonDisabled = true
+                    self.imageStatus = .clean
+                    
                 case "CigaDrain":
-                    result = AnyView(
-                        ZStack {
-                            VStack {
-                                Text("The drain is clogged!")
-                                    .font(.system(size: 20, weight: .semibold))
-                                    .padding(.bottom, 15)
-                                HStack {
-                                    Image(systemName: "pencil")
-                                        .foregroundColor(.red)
-                                    Text("Cigarette")
-                                        .font(.system(size: 20, weight: .semibold))
-                                        .foregroundColor(.darkGray)
-                                }
-                                .offset(y: -10)
-                            }
-                            .padding(.horizontal, 40)
-                            .padding(15)
-                            .background(Color.white.opacity(0.7))
-                            .clipShape(RoundedRectangle(cornerRadius: 30))
-                            .padding(.bottom, 30)
-                        }
-                    )
-                    buttonTitle = "Add to Map"
-                    isButtonDisabled = false
+                    self.imageStatus = .cigarret
+                    
                 case "LeavesDrain":
-                    result = AnyView(
-                        ZStack {
-                            VStack {
-                                Text("The drain is clogged!")
-                                    .font(.system(size: 20, weight: .semibold))
-                                    .padding(.bottom, 15)
-                                HStack {
-                                    Image(systemName: "leaf.fill")
-                                        .foregroundColor(.green)
-                                    Text("Leaves")
-                                        .font(.system(size: 20, weight: .semibold))
-                                        .foregroundColor(.darkGray)
-                                }
-                                .offset(y: -10)
-                            }
-                            .padding(.horizontal, 40)
-                            .padding(15)
-                            .background(Color.white.opacity(0.7))
-                            .clipShape(RoundedRectangle(cornerRadius: 30))
-                            .padding(.bottom, 30)
-                        }
-                    )
-                    buttonTitle = "Add to Map"
-                    isButtonDisabled = false
+                    self.imageStatus = .cigarret
+                    
                 default:
-                    result = AnyView(Text("Unknown result: \(classification)").font(.system(size: 20, weight: .semibold)))
-                    buttonTitle = "Add to Map"
-                    isButtonDisabled = false
+                    self.imageStatus = .error
                 }
             }
         }
@@ -211,9 +261,7 @@ struct CoreModelProcessView: View {
             do {
                 try handler.perform([request])
             } catch {
-                DispatchQueue.main.async {
-                    result = AnyView(Text("Failed to perform request: \(error.localizedDescription)").font(.system(size: 20, weight: .semibold)))
-                }
+                self.imageStatus = .error
             }
         }
     }

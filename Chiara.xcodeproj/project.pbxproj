@@ -32,6 +32,7 @@
 		FB1050892C67D3940014097E /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050852C67D3940014097E /* CustomAnnotation.swift */; };
 		FB10508B2C67DD1E0014097E /* RouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10508A2C67DD1E0014097E /* RouterManager.swift */; };
 		FB1050912C67F2890014097E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB1050902C67F2890014097E /* GoogleService-Info.plist */; };
+		FB1050952C680A860014097E /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1050942C680A860014097E /* ButtonLabel.swift */; };
 		FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C02C675C73008324F8 /* StreetDrain.swift */; };
 		FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A04C32C676140008324F8 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		FB1050852C67D3940014097E /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAnnotation.swift; path = Chiara/Views/Maps/CustomAnnotation.swift; sourceTree = SOURCE_ROOT; };
 		FB10508A2C67DD1E0014097E /* RouterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterManager.swift; sourceTree = "<group>"; };
 		FB1050902C67F2890014097E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB1050942C680A860014097E /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		FB4A04C02C675C73008324F8 /* StreetDrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StreetDrain.swift; path = Chiara/Models/StreetDrain.swift; sourceTree = SOURCE_ROOT; };
 		FB4A04C32C676140008324F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 		67C309F62C6754760084070F /* Chiara */ = {
 			isa = PBXGroup;
 			children = (
+				FB1050932C680A670014097E /* Components */,
 				FB4A04CD2C678206008324F8 /* Models */,
 				FB4A04C22C67612D008324F8 /* Managers */,
 				67C30A082C6754AB0084070F /* Helpers */,
@@ -224,6 +227,14 @@
 				8CCCAD1E2C67D6F800A1B557 /* LottieView.swift */,
 			);
 			path = SplashView;
+			sourceTree = "<group>";
+		};
+		FB1050932C680A670014097E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FB1050942C680A860014097E /* ButtonLabel.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		FB4A04C22C67612D008324F8 /* Managers */ = {
@@ -395,6 +406,7 @@
 				FB4A04C42C676140008324F8 /* LocationManager.swift in Sources */,
 				8CCCAD1F2C67D6F800A1B557 /* LottieView.swift in Sources */,
 				4647CDAC2C67F112002C44AC /* CoreModelProcessView.swift in Sources */,
+				FB1050952C680A860014097E /* ButtonLabel.swift in Sources */,
 				FB4A04C12C675C73008324F8 /* StreetDrain.swift in Sources */,
 				46046DED2C67E79000DB3AE8 /* NewLocationView.swift in Sources */,
 				67680A1F2C6767CA001F1577 /* AppDelegate.swift in Sources */,
@@ -545,7 +557,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -583,7 +595,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

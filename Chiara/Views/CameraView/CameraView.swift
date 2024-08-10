@@ -91,7 +91,6 @@ struct CameraView: View {
 //                        .padding(.bottom, 250)
                 }
             }
-            
             Spacer().frame(height: 30)
             
             HStack {
@@ -102,15 +101,16 @@ struct CameraView: View {
                     .foregroundStyle(.gray)
                 Spacer()
             }
+            Spacer().frame(height: 10)
         }
         .padding(.horizontal, 20)
         .navigationTitle("Upload")
         .navigationBarItems(
             trailing:  Button {
-                if cameraViewModel.model.recentImage != nil {
-                    routerManager.push(view: .coreModelProcessView(image: cameraViewModel.model.recentImage))
+                if let image = cameraViewModel.model.recentImage {
+                    routerManager.push(view: .coreModelProcessView(image: image))
                 } else {
-                    
+                    // TODO: 예외처리
                 }
             } label: {
                 Text("Next")
