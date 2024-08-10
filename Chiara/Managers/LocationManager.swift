@@ -121,6 +121,27 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
         }
     }
     
+    // MARK: - location을 통해 도로명 주소를 받아오는 메서드
+    func getAddress(with location: CLLocation, completion: @escaping (String?) -> Void) {
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            if let error = error {
+                print("Error in reverseGeocodeLocation: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let placemark = placemarks?.first else {
+                completion(nil)
+                return
+            }
+            
+            let address = "\(placemark.country ?? "") \(placemark.locality ?? "") \(placemark.name ?? "")"
+            completion(address)
+        }
+    }
+    
     // MARK: - 도로명 주소를 좌표로 변환해주는 메서드
     func getCoordinateFrom(address: String, completion: @escaping (_ coordinate: CLLocationCoordinate2D?, _ error: Error?) -> ()) {
         let geocoder = CLGeocoder()

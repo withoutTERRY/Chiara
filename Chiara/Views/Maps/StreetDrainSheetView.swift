@@ -6,50 +6,75 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct StreetDrainSheetView: View {
     @EnvironmentObject var locationManager: LocationManager
-
+    
     var streetDrain: StreetDrain?
+    
+    @Binding var isSheetDisplaying: Bool
+
+//    @State private var address: String = "Pohang-si, Gyeongsangbuk-do"
+
+//
+//    private var address: String {
+//        if let streetDrain = streetDrain {
+//            locationManager.convertLocationToAddress(location: CLLocation(latitude: streetDrain.latitude, longitude: streetDrain.longitude))
+//            return locationManager.currentPlace
+//        } else {
+//            return "Pohang-si, Gyeongsangbuk-do"
+//        }
+//    }
     
     var body: some View {
         VStack(alignment: .center) {
             HStack {
-                Text("\(streetDrain?.address ?? "경상북도 포항시")")
-                    .font(.title)
+                Text("\(locationManager.currentPlace)")
+                    .font(.title2)
                     .fontWeight(.semibold)
-                    .frame(height: 60)
+                    .lineLimit(nil)
                     .multilineTextAlignment(.leading)
-                
                 Spacer()
             }
             
             // TODO: 이미지 추가 예정
             Rectangle()
-                .frame(width: 200, height: 300)
+                .frame(width: 300, height: 200)
             
-            Button {
+            Spacer()
+            
+            NavigationLink {
                 // TODO: 이동 동작 추가
             } label: {
                 Text("Clean It Up")
                     .font(.title2)
                     .fontWeight(.semibold)
+                    .foregroundStyle(.black)
                     .padding(.horizontal, 25)
                     .padding(.vertical, 20)
                     .background {
                         RoundedRectangle(cornerRadius: 30)
-                            .fill(.teal)
+                            .fill(.accent)
                     }
             }
-            
-            Spacer()
+            .padding(.bottom, 20)
         }
         .padding(.horizontal, 20)
+        .padding(.top, 38)
+        .navigationBarBackButtonHidden()
+        .onAppear {
+            if let streetDrain = streetDrain {
+                let location = CLLocation(latitude: streetDrain.latitude, longitude: streetDrain.longitude)
+                locationManager.convertLocationToAddress(location: location)
+            }
+        }
     }
 }
 
 
-#Preview {
-    StreetDrainSheetView(streetDrain: StreetDrain(id: UUID().uuidString,
-                                                  address: "77, Cheongam-ro, Nam-gu, Pohang-si, Gyeongsangbuk-do, Republic of Korea", latitude: 36.01403209698482, longitude: 129.32589456302887, trashType: .cigarette, isCleaned: false))
-}
+//
+//#Preview {
+//    StreetDrainSheetView(address: "77, Cheongam-ro, Nam-gu, Pohang-si, Gyeongsangbuk-do, Republic of Korea")
+//}
+
