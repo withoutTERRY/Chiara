@@ -11,8 +11,6 @@ import MapKit
 struct MapView: View {
     @EnvironmentObject var locationManager: LocationManager
     
-//    @Binding var streetDrainList: [StreetDrain]
-    
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 33.4996213, longitude: 126.5311884),
         span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
@@ -24,8 +22,8 @@ struct MapView: View {
     @State private var currentSheetHeight: CGFloat = 0.05 // 초기 높이 설정
         
     let initialSheetHeight: CGFloat = 0.05 // 초기 높이 값 설정
-    let sheetHeightsArray = Array(stride(from: 0.4, through: 0.8, by: 0.001))
-    let sheetHeights = Set(stride(from: 0.4, through: 0.8, by: 0.001).map { PresentationDetent.fraction($0) })
+    let sheetHeightsArray = Array(stride(from: 0.45, through: 0.8, by: 0.001))
+    let sheetHeights = Set(stride(from: 0.45, through: 0.8, by: 0.001).map { PresentationDetent.fraction($0) })
     
     var body: some View {
         GeometryReader { geo in
@@ -73,7 +71,7 @@ struct MapView: View {
                             .onAppear {
                                 // Sheet가 나타날 때 초기 위치로 설정
                                 withAnimation {
-                                    currentSheetHeight = 0.4
+                                    currentSheetHeight = 0.45
                                 }
                             }
                     } else {
@@ -143,6 +141,3 @@ struct MapView: View {
     }
 }
 
-//#Preview {
-//    MapView(streetDrainList: .constant([]))
-//}

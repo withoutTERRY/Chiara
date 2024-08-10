@@ -138,6 +138,7 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
             }
             
             let address = "\(placemark.country ?? "") \(placemark.locality ?? "") \(placemark.name ?? "")"
+            
             completion(address)
         }
     }
@@ -156,8 +157,6 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
             }
         }
     }
-    
-    
 
     func requestLocation() {
         locationManager.startUpdatingLocation()

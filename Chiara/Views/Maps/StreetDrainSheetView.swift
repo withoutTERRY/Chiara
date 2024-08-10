@@ -15,18 +15,6 @@ struct StreetDrainSheetView: View {
     
     @Binding var isSheetDisplaying: Bool
 
-//    @State private var address: String = "Pohang-si, Gyeongsangbuk-do"
-
-//
-//    private var address: String {
-//        if let streetDrain = streetDrain {
-//            locationManager.convertLocationToAddress(location: CLLocation(latitude: streetDrain.latitude, longitude: streetDrain.longitude))
-//            return locationManager.currentPlace
-//        } else {
-//            return "Pohang-si, Gyeongsangbuk-do"
-//        }
-//    }
-    
     var body: some View {
         ScrollView {
             VStack(alignment: .center) {
@@ -73,10 +61,3 @@ struct StreetDrainSheetView: View {
         }
     }
 }
-
-
-//
-//#Preview {
-//    StreetDrainSheetView(address: "77, Cheongam-ro, Nam-gu, Pohang-si, Gyeongsangbuk-do, Republic of Korea")
-//}
-
