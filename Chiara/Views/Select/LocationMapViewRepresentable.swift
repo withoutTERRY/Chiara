@@ -3,6 +3,7 @@ import MapKit
 import CoreLocation
 
 struct LocationMapViewRepresentable: UIViewRepresentable {
+    @EnvironmentObject var locationManager: LocationManager
     @Binding var address: String
     @Binding var location: CLLocationCoordinate2D
 

@@ -130,6 +130,17 @@
 			path = CoreModelView;
 			sourceTree = "<group>";
 		};
+		6773E4542C684DEE002C9CDC /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				46046DEC2C67E79000DB3AE8 /* SelectLocationView.swift */,
+				67C6F92B2C68020D008EA948 /* SelectLocationMapView.swift */,
+				67C6F9282C67FDC3008EA948 /* HereAnnotation.swift */,
+				670BCA3B2C67F8990033C684 /* LocationMapViewRepresentable.swift */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
 		67C309EB2C6754760084070F = {
 			isa = PBXGroup;
 			children = (
@@ -185,16 +196,13 @@
 		67C30A062C67549B0084070F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6773E4542C684DEE002C9CDC /* Select */,
 				FB1050922C67F8920014097E /* SplashView */,
 				FB4A04CE2C679998008324F8 /* Maps */,
 				72FE83BE2C67F16100D0180C /* UploadSuccessView.swift */,
 				72FE83C62C67F1B500D0180C /* CleanSuccessView.swift */,
 				46046DE32C67C76300DB3AE8 /* CoreModelView */,
 				72B095102C67C35A00192F1A /* Cameras */,
-				46046DEC2C67E79000DB3AE8 /* SelectLocationView.swift */,
-				67C6F92B2C68020D008EA948 /* SelectLocationMapView.swift */,
-				67C6F9282C67FDC3008EA948 /* HereAnnotation.swift */,
-				670BCA3B2C67F8990033C684 /* LocationMapViewRepresentable.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -107,7 +107,7 @@ struct MapView: View {
                                         if translation > 0 {
                                             dragOffset.height += translation / 10
                                         } else if translation < 0 && translation > -200 {
-                                            dragOffset.height = 100
+                                            dragOffset.height = 200
                                         }
                                     }
                                     .onEnded { value in
