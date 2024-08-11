@@ -95,7 +95,7 @@ struct MapView: View {
                     
                     // 시트
                     if isSheetDisplaying {
-                        StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
+                        StreetDrainSheetView(streetDrain: selectedStreetDrain, isSheetDisplaying: $isSheetDisplaying)
                             .background(Color.white)
                             .cornerRadius(30)
                             .offset(y: dragOffset.height) // 시트의 초기 위치를 설정하고, 드래그에 따른 오프셋 적용

@@ -37,10 +37,11 @@ struct StreetDrainSheetView: View {
             Spacer().frame(height: 25)
             
             Button {
-                isSheetDisplaying = false
                 if let streetDrain = streetDrain {
                     routerManager.push(view: .cleanCameraView(streetDrain: streetDrain))
+                    isSheetDisplaying = false
                 }
+                print(streetDrain)
                 
             } label: {
                 Text("Clean It Up")
