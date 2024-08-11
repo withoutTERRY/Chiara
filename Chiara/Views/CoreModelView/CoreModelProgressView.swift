@@ -20,7 +20,7 @@ struct CoreModelProcessView: View {
     enum ImageStatus {
         case notYet
         case inProgress
-        case cigarret
+        case cigarette
         case leaf
         case clean
         case error
@@ -29,7 +29,7 @@ struct CoreModelProcessView: View {
     var isImageProcessingDone: Bool {
         imageStatus == .clean
         || imageStatus == .leaf
-        || imageStatus == .cigarret
+        || imageStatus == .cigarette
         || imageStatus == .error
     }
     
@@ -39,7 +39,7 @@ struct CoreModelProcessView: View {
             "Process Image"
         case .inProgress:
             "In progress"
-        case .cigarret:
+        case .cigarette:
             "Add To Map"
         case .leaf:
             "Add To Map"
@@ -91,10 +91,10 @@ struct CoreModelProcessView: View {
                     self.imageStatus = .inProgress
                 case .inProgress:
                     self.imageStatus = .inProgress
-                case .cigarret:
-                    routerManager.push(view: .selectLocationView)
+                case .cigarette:
+                    routerManager.push(view: .selectLocationView(trashType: .cigarette))
                 case .leaf:
-                    routerManager.push(view: .selectLocationView)
+                    routerManager.push(view: .selectLocationView(trashType: .leaf))
                 case .clean:
                     self.showAlert = true
                 case .error:
@@ -128,7 +128,7 @@ fileprivate extension CoreModelProcessView {
             case .notYet, .inProgress, .error:
                 "Try again"
             
-            case .cigarret, .leaf:
+            case .cigarette, .leaf:
                 "The drain is clogged!"
                 
             case .clean:
@@ -140,8 +140,8 @@ fileprivate extension CoreModelProcessView {
             switch imageStatus {
             case .notYet, .inProgress, .error:
                 "exclamationmark.triangle"
-            case .cigarret:
-                "pencil.fill"
+            case .cigarette:
+                "pencil"
             case .leaf:
                 "leaf.fill"
             case .clean:
@@ -153,7 +153,7 @@ fileprivate extension CoreModelProcessView {
             switch imageStatus {
             case .notYet, .inProgress, .error:
                     .yellow
-            case .cigarret:
+            case .cigarette:
                     .red
             case .leaf:
                     .green
@@ -166,8 +166,8 @@ fileprivate extension CoreModelProcessView {
             switch imageStatus {
             case .notYet, .inProgress, .error:
                 ""
-            case .cigarret:
-                "cigarret"
+            case .cigarette:
+                "cigarette"
             case .leaf:
                 "leaves"
             case .clean:
@@ -242,10 +242,10 @@ fileprivate extension CoreModelProcessView {
                     self.imageStatus = .clean
                     
                 case "CigaDrain":
-                    self.imageStatus = .cigarret
+                    self.imageStatus = .cigarette
                     
                 case "LeavesDrain":
-                    self.imageStatus = .cigarret
+                    self.imageStatus = .leaf
                     
                 default:
                     self.imageStatus = .error

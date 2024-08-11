@@ -13,11 +13,12 @@ struct SelectLocationMapView: View {
     @EnvironmentObject var routerManager: RouterManager
     
     @Binding var address: String
+    @Binding var location: CLLocationCoordinate2D
     
     var body: some View {
         ZStack {
             // MARK: - 메인으로 표시될 지도
-            LocationMapViewRepresentable(address: $address)
+            LocationMapViewRepresentable(address: $address, location: $location)
             
             VStack {
                 HereAnnotation()

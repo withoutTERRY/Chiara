@@ -4,6 +4,7 @@ import CoreLocation
 
 struct LocationMapViewRepresentable: UIViewRepresentable {
     @Binding var address: String
+    @Binding var location: CLLocationCoordinate2D
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView(frame: .zero)
@@ -34,6 +35,7 @@ struct LocationMapViewRepresentable: UIViewRepresentable {
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
             let center = mapView.centerCoordinate
             let location = CLLocation(latitude: center.latitude, longitude: center.longitude)
+            parent.location = CLLocationCoordinate2D(latitude: center.latitude, longitude: center.longitude)
             convertLocationToAddress(location: location)
         }
 

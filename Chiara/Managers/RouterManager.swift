@@ -32,8 +32,8 @@ class RouterManager: ObservableObject {
             CameraView()
         case .coreModelProcessView(let image):
             CoreModelProcessView(image: image)
-        case .selectLocationView:
-            SelectLocationView()
+        case .selectLocationView(let trashType):
+            SelectLocationView(trashType: trashType)
         case .uploadSuccessView:
             UploadSuccessView()
             
@@ -65,7 +65,7 @@ enum ChiaraView: Hashable {
     
     case cameraView
     case coreModelProcessView(image: UIImage)
-    case selectLocationView
+    case selectLocationView(trashType: TrashType)
     
     case uploadSuccessView
     

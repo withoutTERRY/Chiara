@@ -22,7 +22,7 @@ struct CoreModelCheckView: View {
     enum ImageStatus {
         case notYet
         case inProgress
-        case cigarret
+        case cigarette
         case leaf
         case clean
         case error
@@ -38,7 +38,7 @@ struct CoreModelCheckView: View {
             "Check Image"
         case .inProgress:
             "In progress"
-        case .cigarret:
+        case .cigarette:
             "Try Again"
         case .leaf:
             "Try Again"
@@ -90,7 +90,7 @@ struct CoreModelCheckView: View {
                     self.imageStatus = .inProgress
                 case .inProgress:
                     self.imageStatus = .inProgress
-                case .cigarret:
+                case .cigarette:
                     self.showAlert = true
                 case .leaf:
                     self.showAlert = true
@@ -182,10 +182,10 @@ fileprivate extension CoreModelCheckView {
                     self.imageStatus = .clean
                     
                 case "CigaDrain":
-                    self.imageStatus = .cigarret
+                    self.imageStatus = .cigarette
                     
                 case "LeavesDrain":
-                    self.imageStatus = .cigarret
+                    self.imageStatus = .cigarette
                     
                 default:
                     self.imageStatus = .error

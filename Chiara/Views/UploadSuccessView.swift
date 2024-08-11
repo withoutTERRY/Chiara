@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct UploadSuccessView: View {
+    @EnvironmentObject var routerManager: RouterManager
+    
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
@@ -27,9 +29,8 @@ struct UploadSuccessView: View {
                 .font(.system(size: 17, weight: .medium))
                 .padding(.bottom, 120)
             
-            // TODO: 버튼 구현해야함
             Button {
-                
+                routerManager.backToMap()
             } label: {
                 RoundedRectangle(cornerRadius: 30)
                     .frame(height: 54)
