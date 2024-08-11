@@ -17,14 +17,8 @@ struct MapView: View {
         span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     @State private var selectedStreetDrain: StreetDrain?
-    
     @State private var isSheetDisplaying: Bool = false
-    
-    @State private var currentSheetHeight: CGFloat = 0.05 // 초기 높이 설정
-    
-    let initialSheetHeight: CGFloat = 0.05 // 초기 높이 값 설정
-    let sheetHeightsArray = Array(stride(from: 0.45, through: 0.8, by: 0.001))
-    let sheetHeights = Set(stride(from: 0.45, through: 0.8, by: 0.001).map { PresentationDetent.fraction($0) })
+    @State private var dragOffset: CGSize = .zero
     
     var body: some View {
         GeometryReader { geo in
@@ -43,13 +37,15 @@ struct MapView: View {
                         }
                     ),
                     selectedStreetDrain: $selectedStreetDrain,
-                    isSheetDisplaying: $isSheetDisplaying)
+                    isSheetDisplaying: $isSheetDisplaying,
+                    dragOffset: $dragOffset
+                )
                 .edgesIgnoringSafeArea(.all)
-
-                // MARK: - 지도위에 나타날 화면
-                VStack(spacing: 0) {
+                
+                VStack {
                     Spacer()
                     
+                    // 상단 버튼
                     HStack(spacing: 0) {
                         Button {
                             routerManager.push(view: .cameraView)
@@ -71,7 +67,6 @@ struct MapView: View {
                                     .foregroundStyle(.white)
                             }
                             .padding(.all, 10)
-                            
                             .background {
                                 RoundedRectangle(cornerRadius: 90)
                                     .fill(.black)
@@ -82,7 +77,7 @@ struct MapView: View {
                         
                         // MARK: - 내 위치로 이동 버튼
                         Button {
-                            // TODO: 내 위치로 이동
+                            locationManager.mapViewFocusChange()
                         } label: {
                             Image(systemName: "scope")
                                 .font(.title3)
@@ -95,43 +90,41 @@ struct MapView: View {
                                 }
                         }
                     }
-                }
-                .padding(.bottom, geo.size.height * currentSheetHeight + 5) // sheetHeight에 따른 bottom padding 조정
-                .padding(.horizontal, 20)
-                .animation(.easeInOut, value: currentSheetHeight) // 애니메이션 적용
-            }
-            .navigationBarBackButtonHidden()
-            .sheet(isPresented: $isSheetDisplaying, onDismiss: {
-                // Sheet가 닫힐 때 HStack을 초기 상태로 복귀
-                currentSheetHeight = initialSheetHeight
-            }) {
-                StreetDrainSheetView(streetDrain: selectedStreetDrain, isSheetDisplaying: $isSheetDisplaying)
-                    .presentationDetents(sheetHeights,
-                                     selection: Binding(
-                                        get: {
-                                            PresentationDetent.fraction(currentSheetHeight)
-                                        },
-                                        set: { newDetent in
-                                            // 부드러운 애니메이션 추가
-                                            withAnimation {
-                                                if let fractionValue = sheetHeightsArray.first(where: {
-                                                    PresentationDetent.fraction($0) == newDetent
-                                                }) {
-                                                    currentSheetHeight = fractionValue
-                                                }
-                                            }
+                    .padding(.horizontal, 20)
+                    .offset(y: isSheetDisplaying ? dragOffset.height : 0)
+                    
+                    // 시트
+                    if isSheetDisplaying {
+                        StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
+                            .background(Color.white)
+                            .cornerRadius(30)
+                            .offset(y: dragOffset.height) // 시트의 초기 위치를 설정하고, 드래그에 따른 오프셋 적용
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { value in
+                                        let translation = value.translation.height
+                                        
+                                        if translation > 0 {
+                                            dragOffset.height += translation / 10
+                                        } else if translation < 0 && translation > -200 {
+                                            dragOffset.height = 100
                                         }
-                                     ))
-                .presentationDragIndicator(.visible)
-                .presentationCornerRadius(15)
-                .onAppear {
-                    // Sheet가 나타날 때 초기 위치로 설정
-                    withAnimation {
-                        currentSheetHeight = 0.45
+                                    }
+                                    .onEnded { value in
+                                        withAnimation(.spring()) {
+                                            // 드래그가 일정 거리 이상이면 시트 닫기, 그렇지 않으면 제자리로
+                                            if dragOffset.height > 200 {
+                                                isSheetDisplaying = false
+                                            }
+                                            dragOffset = .zero // 오프셋 초기화
+                                        }
+                                    }
+                            )
+                            .transition(.move(edge: .bottom)) // 시트가 나타날 때의 애니메이션
                     }
                 }
             }
+            .navigationBarBackButtonHidden()
         }
     }
 }
-

@@ -17,6 +17,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     @Binding var region: MKCoordinateRegion
     @Binding var selectedStreetDrain: StreetDrain?
     @Binding var isSheetDisplaying: Bool
+    @Binding var dragOffset: CGSize
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView(frame: .zero)
@@ -135,6 +136,7 @@ struct MapViewRepresentable: UIViewRepresentable {
                     }) {
                     
                     parent.isSheetDisplaying = true
+                    parent.dragOffset = CGSize(width: 100, height: 100)
                     
                     // 선택한 배수구 업데이트
                     parent.selectedStreetDrain = streetDrain
