@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CleanSuccessView: View {
+    @EnvironmentObject var routerManager: RouterManager
+    
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
@@ -58,10 +60,10 @@ struct CleanSuccessView: View {
                 .frame(height: 176)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 58)
+        
             
-            // TODO: 버튼 구현해야함
             Button {
-                
+                routerManager.backToMap()
             } label: {
                 RoundedRectangle(cornerRadius: 30)
                     .frame(height: 54)

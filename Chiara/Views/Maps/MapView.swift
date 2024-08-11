@@ -52,7 +52,7 @@ struct MapView: View {
                     
                     HStack(spacing: 0) {
                         Button {
-//                            routerManager.push(view: .cameraView)
+                            routerManager.push(view: .cameraView)
                         } label: {
                             HStack(spacing: 10) {
                                 Image(systemName: "trash.fill")
@@ -76,7 +76,6 @@ struct MapView: View {
                                 RoundedRectangle(cornerRadius: 90)
                                     .fill(.black)
                             }
-                            // TODO: sheet 크기만큼 바텀 패딩 주기
                         }
                         
                         Spacer()
@@ -101,40 +100,35 @@ struct MapView: View {
                 .padding(.horizontal, 20)
                 .animation(.easeInOut, value: currentSheetHeight) // 애니메이션 적용
             }
+            .navigationBarBackButtonHidden()
             .sheet(isPresented: $isSheetDisplaying, onDismiss: {
                 // Sheet가 닫힐 때 HStack을 초기 상태로 복귀
                 currentSheetHeight = initialSheetHeight
             }) {
-                if #available(iOS 16.4, *) {
-                    StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
-                        .presentationDetents(sheetHeights,
-                                             selection: Binding(
-                                                get: {
-                                                    PresentationDetent.fraction(currentSheetHeight)
-                                                },
-                                                set: { newDetent in
-                                                    // 부드러운 애니메이션 추가
-                                                    withAnimation {
-                                                        if let fractionValue = sheetHeightsArray.first(where: {
-                                                            PresentationDetent.fraction($0) == newDetent
-                                                        }) {
-                                                            currentSheetHeight = fractionValue
-                                                        }
-                                                    }
+                StreetDrainSheetView(streetDrain: selectedStreetDrain, isSheetDisplaying: $isSheetDisplaying)
+                    .presentationDetents(sheetHeights,
+                                     selection: Binding(
+                                        get: {
+                                            PresentationDetent.fraction(currentSheetHeight)
+                                        },
+                                        set: { newDetent in
+                                            // 부드러운 애니메이션 추가
+                                            withAnimation {
+                                                if let fractionValue = sheetHeightsArray.first(where: {
+                                                    PresentationDetent.fraction($0) == newDetent
+                                                }) {
+                                                    currentSheetHeight = fractionValue
                                                 }
-                                             ))
-                        .presentationDragIndicator(.visible)
-                        .presentationCornerRadius(15)
-                        .onAppear {
-                            // Sheet가 나타날 때 초기 위치로 설정
-                            withAnimation {
-                                currentSheetHeight = 0.45
-                            }
-                        }
-                } else {
-                    StreetDrainSheetView(isSheetDisplaying: $isSheetDisplaying)
-                        .presentationDragIndicator(.visible)
-                        .presentationDetents([.medium])
+                                            }
+                                        }
+                                     ))
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(15)
+                .onAppear {
+                    // Sheet가 나타날 때 초기 위치로 설정
+                    withAnimation {
+                        currentSheetHeight = 0.45
+                    }
                 }
             }
         }

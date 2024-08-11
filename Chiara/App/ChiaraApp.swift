@@ -25,7 +25,7 @@ struct ChiaraApp: App {
                 if showSplashView {
                     SplashView()
                         .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 withAnimation {
                                     showSplashView = false
                                 }
@@ -37,6 +37,9 @@ struct ChiaraApp: App {
                             .progressViewStyle(DefaultProgressViewStyle())
                     } else {
                         MapView()
+                            .navigationDestination(for: ChiaraView.self){ chiaraView in
+                                routerManager.view(for: chiaraView)
+                            }
                     }
                 }
             }

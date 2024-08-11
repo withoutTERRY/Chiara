@@ -15,8 +15,28 @@ class RouterManager: ObservableObject {
         switch route {
         case .mapView:
             MapView()
-//        case .cameraView:
-//            CameraView()
+            
+            
+            
+        case .cleanCameraView(let streetDrain):
+            CleanCameraView(streetDrain: streetDrain)
+        case .coreModelCheckView(let streetDrain, let image):
+            CoreModelCheckView(streetDrain: streetDrain,
+                               image: image)
+        case .cleanSuccessView:
+            CleanSuccessView()
+            
+         
+            
+        case .cameraView:
+            CameraView()
+        case .coreModelProcessView(let image):
+            CoreModelProcessView(image: image)
+        case .selectLocationView(let trashType):
+            SelectLocationView(trashType: trashType)
+        case .uploadSuccessView:
+            UploadSuccessView()
+            
         }
     }
     
@@ -28,14 +48,26 @@ class RouterManager: ObservableObject {
         path.removeLast()
     }
     
-    func backToHome(){
-        //        self.path = NavigationPath()
+    func backToMap(){
+        self.path = NavigationPath()
         path.append(ChiaraView.mapView)
     }
 }
 
 enum ChiaraView: Hashable {
     case mapView
-//    case cameraView
+    
+    case cleanCameraView(streetDrain: StreetDrain)
+    case coreModelCheckView(streetDrain: StreetDrain, image: UIImage)
+    case cleanSuccessView
+    
+    
+    
+    case cameraView
+    case coreModelProcessView(image: UIImage)
+    case selectLocationView(trashType: TrashType)
+    
+    case uploadSuccessView
+    
 }
 

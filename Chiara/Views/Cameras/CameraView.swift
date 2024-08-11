@@ -1,23 +1,21 @@
 //
-//  CleanCameraView.swift
+//  CameraView.swift
 //  Chiara
 //
-//  Created by Lee Sihyeong, sseungwonnn on 8/11/24.
+//  Created by Lee Sihyeong on 8/11/24.
 //
 
 import SwiftUI
 
-struct CleanCameraView: View {
+struct CameraView: View {
     @EnvironmentObject var cameraViewModel: CameraViewModel
     @EnvironmentObject var routerManager: RouterManager
     
     @State var isShuttered: Bool = false
     
-    let streetDrain: StreetDrain
-    
     var bottomText: String {
         if !isShuttered { // 셔터 누르기 전
-            return "Upload the photo after cleaning"
+            return "Check the state of the street drain!"
         } else if self.cameraViewModel.model.recentImage == nil { // 셔터는 눌렀으나 사진이 없는 경우
             return "please take a photo again!"
         } else { // 성공
@@ -53,7 +51,11 @@ struct CleanCameraView: View {
                         }
                     }
                     .padding(.bottom, 16)
-
+                    
+//                    Text("Take a photo of the street drain")
+//                        .fontWeight(.semibold)
+//                        .foregroundStyle(.darkGray)
+//                        .padding(.bottom, 250)
                     
                 }
                 // MARK: - 사진을 찍은 뒤
@@ -82,8 +84,14 @@ struct CleanCameraView: View {
                         }
                     }
                     .padding(.bottom, 16)
+                    
+//                    Text("Go to next step")
+//                        .fontWeight(.semibold)
+//                        .foregroundStyle(.darkGray)
+//                        .padding(.bottom, 250)
                 }
             }
+            
             Spacer().frame(height: 30)
             
             HStack {
@@ -96,16 +104,16 @@ struct CleanCameraView: View {
             }
         }
         .padding(.horizontal, 20)
-        .navigationTitle("Check")
+        .navigationTitle("Upload")
         .navigationBarItems(
-            trailing: Button {
+            trailing:  Button {
                 if let image = cameraViewModel.model.recentImage {
-                    routerManager.push(view: .coreModelCheckView(streetDrain: streetDrain, image: image))
+                    routerManager.push(view: .coreModelProcessView(image: image))
                 } else {
                     
                 }
             } label: {
-                Text("Done")
+                Text("Next")
             }
         )
         .onAppear {
