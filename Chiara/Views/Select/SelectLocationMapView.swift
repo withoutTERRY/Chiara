@@ -32,7 +32,7 @@ struct SelectLocationMapView: View {
                     Spacer()
                     // MARK: - 내 위치로 이동 버튼
                     Button {
-                        // TODO: 내 위치로 이동
+                        locationManager.mapViewFocusChange()
                     } label: {
                         Image(systemName: "scope")
                             .font(.title3)

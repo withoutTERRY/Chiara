@@ -20,7 +20,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     @Binding var dragOffset: CGSize
     
     func makeUIView(context: Context) -> MKMapView {
-        let mapView = MKMapView(frame: .zero)
+        let mapView = locationManager.mapView
         mapView.delegate = context.coordinator
         mapView.showsUserLocation = true
         mapView.setUserTrackingMode(.follow, animated: true)
@@ -136,7 +136,7 @@ struct MapViewRepresentable: UIViewRepresentable {
                     }) {
                     
                     parent.isSheetDisplaying = true
-                    parent.dragOffset = CGSize(width: 100, height: 100)
+                    parent.dragOffset = CGSize(width: 200, height: 200)
                     
                     // 선택한 배수구 업데이트
                     parent.selectedStreetDrain = streetDrain

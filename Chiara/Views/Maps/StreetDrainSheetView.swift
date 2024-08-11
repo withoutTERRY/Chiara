@@ -20,8 +20,7 @@ struct StreetDrainSheetView: View {
             RoundedRectangle(cornerRadius: 30)
                 .fill(.darkGray)
                 .frame(width: 80, height: 5)
-                .padding(.top, -20)
-                .padding(.bottom, 10)
+                .padding(.top, 12)
             HStack {
                 Text("\(locationManager.currentPlace)")
                     .font(.title2)
@@ -33,9 +32,9 @@ struct StreetDrainSheetView: View {
             
             // TODO: 이미지 추가 예정
             Rectangle()
-                .frame(width: 300, height: 200)
+                .frame(width: 250, height: 150)
             
-            Spacer().frame(height: 50)
+            Spacer().frame(height: 25)
             
             Button {
                 isSheetDisplaying = false
@@ -55,9 +54,9 @@ struct StreetDrainSheetView: View {
                             .fill(.accent)
                     }
             }
-            Spacer().frame(height: 50)
+            Spacer()
         }
-        .frame(height: 500)
+        .frame(height: 480)
         .padding(.horizontal, 20)
         .padding(.bottom, 20)
         .navigationBarBackButtonHidden()
